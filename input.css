@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .home .slide:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0,0.5);
+} */
+
+.home .slide{
+    opacity: 0;
+    visibility: hidden;
+}
+.home .slide.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+#slide1 p{
+    opacity: -5;
+    animation: fadeInTop 4s ease forwards;
+  }
+  
+  @keyframes fadeInTop {
+      0%{
+          color: rgb(1, 52, 52);
+      }
+      100%{
+          opacity: 5;
+          color: white;
+      }
+  }
+
+  /* section {
+    width: 100%;
+    height: auto;
+} */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; visibility: visible; }
+  }
+  
+  #dm1 {
+    font-family: "Amita", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* font-size: 50px; */
+    overflow: hidden;
+    white-space: nowrap;
+    animation-name: typing;
+    animation-duration: 2.5s;
+    animation-timing-function: steps(200, end);
+    animation-iteration-count: 100;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; visibility: visible; }
+  }
+  
+  .demo {
+    font-family: "Amita", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* font-size: 50px; */
+    overflow: hidden;
+    white-space: nowrap;
+    animation-name: typing;
+    animation-duration: 5s;
+    animation-timing-function: steps(200, end);
+    animation-iteration-count: 100;
+  }
+
+
+  /* slide 2 -----------------==================== */
+
+  .hna {
+  /* font-size: 80px; */
+  color: #ffffff;
+  /* margin: 0; */
+  font-weight: normal;
+  font-family: 'Great Vibes';
+  
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+#harshit {    /* For increasing performance 
+                       ID/Class should've been used. 
+                       For a small demo 
+                       it's okaish for now */
+  animation: showup 5s infinite;
+}
+
+#anisha {
+  width:0px;
+  animation: reveal 5s infinite;
+  margin-left:-35px;
+  /* padding-top: -35px; */
+  animation: slidein 5s infinite;
+} 
+
+@keyframes showup {
+    0% {opacity:0; margin-left:-800px; }
+    20% {opacity:1; margin-left:0px;}
+    80% {opacity:1;  margin-left:0px; }
+    100% {opacity:0; margin-left:0px;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    65% { margin-left:0px;  }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
+}
+
+
+/* slide 3: hashtag ------------------=====================*/
+
+.container1 {
+    /* height: 100%; */
+    /* width: 100%; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  #text1 {
+    font-weight: 100;
+    color: #ffffff;
+  }
+  .dud {
+    /* color: #757575; */
+    color: #86b2b1;
+  }
+
+
+/* hamburger menu-----------================= */
+
+.hamburger{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: black;
+
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.hamburger-middle{
+    transform: translateY(7px);
+}
+
+.hamburger-bottom{
+    transform: translateY(14px);
+}
+
+.open{
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+
+.open .hamburger-top{
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle{
+    display: none;
+}
+
+.open .hamburger-bottom{
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+/* slide animation ////////////////////////////////// */
+
+
+.s1.active{
+    animation: ani1 4s ease forwards;
+}
+@keyframes ani1 {
+    0%{
+        background-image: url('../img/slides/slide-1.jpg');
+    }
+    80%{
+        background-image: url('../img/slides/slide-1.jpg');
+    }
+    100%{
+        opacity: 5;
+        background-image: url('../img/slides/slide-2.jpg');
+    }
+}
+
+.s2.active{
+    animation: ani2 4s ease forwards;
+}
+@keyframes ani2 {
+    0%{
+        background-image: url('../img/slides/slide-2.jpg');
+    }
+    80%{
+        background-image: url('../img/slides/slide-2.jpg');
+    }
+    100%{
+        opacity: 5;
+        background-image: url('../img/slides/slide-3.jpg');
+    }
+}
+.s3.active{
+    animation: ani3 4s ease forwards;
+}
+@keyframes ani3 {
+    0%{
+        background-image: url('../img/slides/slide-3.jpg');
+    }
+    80%{
+        background-image: url('../img/slides/slide-3.jpg');
+    }
+    100%{
+        opacity: 5;
+        background-image: url('../img/slides/slide-1.jpg');
+    }
+}
+/*----------------------------------------------------------------  */
+/* .seeyou{
+    background: url('../img/slides/slide-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 50vh;
+    width: 100vw;
+  }
+  .hi{
+    position: absolute;
+    left: 50%; 
+    margin-top: 5rem;
+    transform: translateX(-50%);
+    width: 80%;
+  } */
+  
+  /* #countdown {
+      text-align: center;
+  } */
+  
+  #countdown .section-head h4 {
+    
+      /* position: relative; */
+      font-family: "Dancing Script", cursive;
+      font-weight: 400;
+      /* font-size: 60px; */
+      /* padding: 0; */
+      /* margin: 0; */
+  }
+  
+  /* #countdown .section-head p { */
+      /* font-size: 24px; */
+      /* margin-bottom: 0; */
+  /* } */
+  
+  /* #countdown ul { */
+      /* margin-bottom: 0; */
+      /* text-align: center; */
+  /* } */
+  
+  #countdown li {
+      font-family: 'Nunito Sans';
+      font-weight: 400;
+      display: inline-block;
+      /* font-size: 15px; */
+      list-style-type: none;
+      /* margin:190px 80px 0 80px; */
+      /* line-height: 3em; */
+      /* text-align: center; */
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      
+  }
+  
+  #countdown li num {
+      /* display: block; */
+      font-family: 'Nunito Sans', sans-serif;
+      /* font-size: 60px; */
+      font-weight: 700;
+      /* letter-spacing: -1px; */
+  }
+  
+  @media (max-width: 768px) {
+    #countdown .section-head h4{
+      /* font-size: 30px; */
+      font-weight: 200;
+      /* padding: 0; */
+      /* margin: 0; */
+      display: block;
+    }
+      #countdown li {
+        margin: 0;
+          /* font-size: 8px; */
+          /* padding: 160px 0 0 30px; */
+          /* text-align: center; */
+          display: inline-block;
+      }
+      /* #countdown li span { */
+          /* font-size: 30px; */
+      /* } */
+  }
+  
+  #countdown{
+      background-repeat: no-repeat;
+      height: 40vh;
+      /* width: 100vw; */
+  }
+  #countdown .section-head,
+  #countdown .ul{
+      position: absolute;
+      left: 50%; 
+      /* margin-top: 5rem; */
+      transform: translateX(-50%);
+      /* width: 100%; */
+  }
+
+  /* Events -================================================ */
+
+
+  @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
+  .timeline {
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 700px;
+    position: relative;
+  }
+  .timeline__content-title {
+    font-weight: normal;
+    /* font-size: 66px; */
+    margin: -10px 0 0 0;
+    transition: 0.4s;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-family: "Pathway Gothic One", sans-serif;
+    color: #fff;
+    text-align: center;
+  }
+  .timeline__content-desc {
+    margin: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Cardo;
+    font-weight: normal;
+    line-height: 25px;
+    text-align: center;
+
+  }
+  .timeline:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, 0.07);
+  }
+  @media only screen and (max-width: 767px) {
+    .timeline:before {
+      left: 40px;
+    }
+  }
+  .timeline-item {
+    margin-top: 40px;
+    opacity: 0.3;
+    filter: blur(6px);
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-200px);
+    /* padding-bottom: 40px; ,,,,,,,,,,,,,,*/
+  }
+  .timeline-item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255);
+
+    font-size: 13px;
+    font-family: "Pathway Gothic One", sans-serif;
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    top: 70%;
+    margin-top: 80px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+  }
+  .timeline-item:nth-child(even) {
+    align-self: flex-end;
+  }
+  .timeline-item:nth-child(even):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    padding-right: 15px;
+  }
+  .timeline-item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+  .timeline-item--active:before {
+    top: 50%;
+    transition: 0.3s all 0.2s;
+    opacity: 1;
+  }
+  .timeline-item--active .timeline__content-title {
+    margin: 10px 0 0 0;
+    /* color: rgba(255, 255, 255); */
+    color: #fff;
+
+  }
+  .timeline-item--active .timeline__content-desc {
+    /* margin: 10px 0 0 0; */
+    font-size: large;
+    
+  }
+  @media only screen and (max-width: 767px) {
+    .timeline-item {
+      align-self: baseline !important;
+      width: 100%;
+      padding: 0 30px 0 80px;
+    }
+    .timeline-item:before {
+      left: 10px !important;
+      padding: 0 !important;
+      top: 50px;
+      text-align: center !important;
+      width: 60px;
+      border: none !important;
+    }
+    .timeline-item:last-child {
+      padding-bottom: 40px;
+    }
+  }
+  .timeline__img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+  }
+  .timeline-container {
+    width: 100%;
+    position: relative;
+    padding: 0px 0;
+    transition: 0.3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .timeline-container:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* backgroung color */
+    background: rgba(99, 99, 99, 0.8);
+    content: "";
+  }
+  .timeline-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+  }
+  .timeline-header__title {
+    color: #fff;
+    font-size: 46px;
+    font-family: Cardo;
+    font-weight: normal;
+    margin: 0;
+  }
+  /* .timeline-header__subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Pathway Gothic One", sans-serif;
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+  } */
+  
+  /* .demo-footer {
+    padding: 60px 0;
+    text-align: center;
+  }
+  .demo-footer a {
+    color: #999;
+    display: inline-block;
+    font-family: Cardo;
+  } */
+
+
+  .gro_bri,.and{
+      font-weight: normal;
+      font-family: 'Great Vibes';
+  }
+
+  
+
