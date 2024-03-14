@@ -179,7 +179,7 @@ class TextScramble {
           );
           selectors.item.last().addClass(selectors.activeClass);
         } else if (pos <= max - 100 && pos >= min) {
-            console.log(min,' ',max);
+            // console.log(min,' ',max);
           selectors.id.css(
             "background-image",
             "url(" +

@@ -10,6 +10,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Petit+Formal+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Ruthie&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Tangerine:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Kaushan+Script&family=Tangerine:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 /*
 ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
 */
@@ -560,6 +582,12 @@ video {
   width: 100%;
 }
 
+@media (min-width: 400px){
+  .container{
+    max-width: 400px;
+  }
+}
+
 @media (min-width: 480px){
   .container{
     max-width: 480px;
@@ -637,16 +665,16 @@ video {
   display: none;
 }
 
+.h-1\/2{
+  height: 50%;
+}
+
 .h-screen{
   height: 100vh;
 }
 
 .w-1\/2{
   width: 50%;
-}
-
-.w-1\/3{
-  width: 33.333333%;
 }
 
 .w-16{
@@ -723,9 +751,14 @@ video {
   padding: 1.5rem;
 }
 
-.py-24{
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-16{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .py-8{
@@ -735,10 +768,6 @@ video {
 
 .pb-10{
   padding-bottom: 2.5rem;
-}
-
-.pb-2{
-  padding-bottom: 0.5rem;
 }
 
 .pl-10{
@@ -805,20 +834,20 @@ video {
   font-size: 2.441rem;
 }
 
-.text-base{
-  font-size: 1rem;
+.text-5xl{
+  font-size: 3.052rem;
 }
 
 .text-sm{
   font-size: 0.8rem;
 }
 
-.text-xl{
-  font-size: 1.25rem;
+.text-smsm{
+  font-size: 0.7rem;
 }
 
-.text-xs{
-  font-size: 0.6rem;
+.text-xl{
+  font-size: 1.25rem;
 }
 
 .font-bold{
@@ -857,6 +886,81 @@ video {
     height: 100%;
     background-color: rgb(0, 0, 0,0.5);
 } */
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.alex-brush-regular {
+  font-family: "Alex Brush", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.kaushan-script-regular {
+  font-family: "Kaushan Script", cursive;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.tangerine-regular {
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tangerine-bold {
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ruthie-regular {
+  font-family: "Ruthie", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.lovers-quarrel-regular {
+  font-family: "Lovers Quarrel", cursive;
+  font-weight: 600;
+  /* font-style: normal; */
+}
+
+.arizonia-regular {
+  font-family: "Arizonia", cursive;
+  /* font-weight: 400; */
+  /* font-style: normal; */
+}
+
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 100;
+  /* font-style: normal; */
+}
+
+.rouge-script-regular {
+  font-family: "Rouge Script", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.dancing-script {
+  font-family: "Dancing Script", cursive;
+  /* font-optical-sizing: auto; */
+  font-weight: 900;
+  font-style: normal;
+}
+
+.petit-formal{
+  font-family: "Petit Formal Script", cursive;
+  font-weight: 600;
+  /* font-size: x-small; */
+  /* font-style: normal; */
+}
 
 .home .slide{
   opacity: 0;
@@ -1463,14 +1567,53 @@ video {
     font-family: Cardo;
   } */
 
-.gro_bri,.and{
-  font-weight: normal;
-  font-family: 'Great Vibes';
-}
+/* .gro_bri,.and{
+      font-weight: normal;
+      font-family: 'Great Vibes';
+  } */
 
 .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+@media (min-width: 400px){
+  .xs\:p-2{
+    padding: 0.5rem;
+  }
+
+  .xs\:py-8{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .xs\:text-2xl{
+    font-size: 1.563rem;
+  }
+
+  .xs\:text-3xl{
+    font-size: 1.953rem;
+  }
+
+  .xs\:text-5xl{
+    font-size: 3.052rem;
+  }
+
+  .xs\:text-6xl{
+    font-size: 4.501rem;
+  }
+
+  .xs\:text-base{
+    font-size: 1rem;
+  }
+
+  .xs\:text-mid{
+    font-size: 1.25rem;
+  }
+
+  .xs\:text-sm{
+    font-size: 0.8rem;
+  }
 }
 
 @media (min-width: 480px){
@@ -1482,8 +1625,8 @@ video {
     align-self: center;
   }
 
-  .sm\:text-sm{
-    font-size: 0.8rem;
+  .sm\:text-2xl{
+    font-size: 1.563rem;
   }
 }
 
@@ -1504,6 +1647,10 @@ video {
     width: 6rem;
   }
 
+  .md\:pb-5{
+    padding-bottom: 1.25rem;
+  }
+
   .md\:pr-12{
     padding-right: 3rem;
   }
@@ -1512,12 +1659,32 @@ video {
     padding-top: 8rem;
   }
 
+  .md\:pt-5{
+    padding-top: 1.25rem;
+  }
+
   .md\:text-3xl{
     font-size: 1.953rem;
   }
 
+  .md\:text-4xl{
+    font-size: 2.441rem;
+  }
+
   .md\:text-5xl{
     font-size: 3.052rem;
+  }
+
+  .md\:text-7xl{
+    font-size: 5.501rem;
+  }
+
+  .md\:text-base{
+    font-size: 1rem;
+  }
+
+  .md\:text-mid{
+    font-size: 1.25rem;
   }
 }
 
