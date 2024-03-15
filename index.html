@@ -9,39 +9,67 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <header class="absolute container mx-auto p-6 z-20">
-            <!-- Navbar -->
-                <!-- flex container -->
+        <!-- <header class="absolute container mx-auto p-6 z-20"> -->
+        <header class="aabsolute container p-0 z-20">
+            <div>
+                <div class="audio-player">
+                    <div class="timeline">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="controls">
+                        <div class="play-container">
+                            <div class="toggle-play play">
+                            </div>
+                        </div>
+                        <div class="time">
+                            <div class="current">0:00</div>
+                            <div class="divider">/</div>
+                            <div class="length"></div>
+                        </div>
+                        <div class="volume-container">
+                            <div class="volume-button">
+                                <div class="volume icono-volumeMedium"></div>
+                            </div>
+                        
+                            <div class="volume-slider">
+                                <div class="volume-percentage"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar
+                flex container
                 <div class="flex items-center justify-between">
-                    <!-- Logo -->
+                    Logo
                     <div class="pt-2 w-16 md:w-24">
                         <img src="img/ganeshjiii.png" alt="">
                     </div>
                     
-                    <!-- Menu Items -->
+                    Menu Items
                     <div class="hidden md:flex xl:space-x-60 ml-20 mr-10 text-xl space-x-20 ">
                         <a href="#" class="hover:text-darkGrayishBlue">Home</a>
                         <a href="#" class="hover:text-darkGrayishBlue">Events</a>
                         <a href="#" class="hover:text-darkGrayishBlue">Gallery</a>
                         <a href="#" class="hover:text-darkGrayishBlue">Contact</a>
                     </div>
-                    <!-- Hamburger icon -->
+                    Hamburger icon
                     <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
                         <span class="hamburger-top"></span>
                         <span class="hamburger-middle"></span>
                         <span class="hamburger-bottom"></span>
                     </button>
                 </div>
-                <!-- Mobile menu -->
+                Mobile menu
                 <div class="md:hidden">
                     <div id="menu" class="absolute hidden flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
                         <a href="#">Home</a>
                         <a href="#cd">Countdown</a>
                         <a href="#eve">Events</a>
-                        <!-- <a href="#">Gallery</a> -->
+                        <a href="#">Gallery</a>
                         <a href="#">Contact</a>
                     </div>
-                </div>
+                </div> -->
         </header>
 
         <!-- home section -->
