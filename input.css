@@ -127,7 +127,7 @@
     }
     100%{
       opacity: 5;
-      color: #c79382;
+      color: white;
     }
 }
 
@@ -215,7 +215,7 @@
       opacity:1; margin-left:0px; color: white;
     }
     56%{
-      opacity:0;  margin-left:0px; color: black;
+      opacity:0;  margin-left:0px; color: white;
     }
     57%{
       opacity:0; margin-left:0px; 
@@ -323,7 +323,7 @@
 
 
 .s1.active{
-    animation: ani1 4s ease forwards;
+    animation: ani1 5s ease forwards;
 }
 @keyframes ani1 {
     0%{
@@ -342,7 +342,7 @@
 }
 
 .s2.active{
-    animation: ani2 4s ease forwards;
+    animation: ani2 5s ease forwards;
 }
 @keyframes ani2 {
     0%{
@@ -359,7 +359,7 @@
     }
 }
 .s3.active{
-    animation: ani3 4s ease forwards;
+    animation: ani3 5s ease forwards;
 }
 @keyframes ani3 {
     0%{
