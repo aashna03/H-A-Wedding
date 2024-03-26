@@ -104,26 +104,41 @@
 
 
 #slide1 p{
-    opacity: -5;
+    /* opacity: -5; */
     animation: fadeInTop 4s ease forwards;
   }
   
   @keyframes fadeInTop {
-      0%{
-          color : #c79382;
-      }
-      100%{
-          opacity: 5;
-          color: white;
-      }
-  }
+    0%{
+        opacity: 5;
+        color : #c79382;
+    }
+    20%{
+      opacity: 5;
+      color: white;
+    }
+    27%{
+      opacity: 5;
+      color: transparent;
+    }
+    50%{
+      opacity: 5;
+      color: transparent;
+    }
+    100%{
+      opacity: 5;
+      color: white;
+    }
+}
 
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; visibility: visible; }
-  }
+@keyframes typing {
+  0% { width: 0; }
+  29% { width: 100%; visibility: visible; }
+  30%{width: 100%; visibility: hidden;}
+  100%{width:0; }
+}
   
-  #dm1 {
+  /* #dm1 {
     font-family: "Amita", serif;
     font-weight: 400;
     font-style: normal;
@@ -133,12 +148,12 @@
     animation-duration: 2.5s;
     animation-timing-function: steps(200, end);
     animation-iteration-count: 100;
-  }
+  } */
 
-  @keyframes typing {
+  /* @keyframes typing {
     from { width: 0; }
     to { width: 100%; visibility: visible; }
-  }
+  } */
   
   .demo {
     font-family: "Amita", serif;
@@ -147,7 +162,7 @@
     overflow: hidden;
     white-space: nowrap;
     animation-name: typing;
-    animation-duration: 5s;
+    animation-duration: 15s;
     animation-timing-function: steps(200, end);
     animation-iteration-count: 100;
   }
@@ -156,7 +171,7 @@
   /* slide 2 -----------------==================== */
 
   .hna {
-  color: #ffffff;
+  /* color: #ffffff; */
   font-weight: normal;
   font-family: 'Great Vibes';
   
@@ -165,18 +180,15 @@
   white-space:nowrap;
 }
 
-#harshit {    /* For increasing performance 
-                       ID/Class should've been used. 
-                       For a small demo 
-                       it's okaish for now */
-  animation: showup 5s infinite;
+.har{
+  animation: showup 15s infinite; 
 }
 
 #anisha {
   width:0px;
-  animation: reveal 5s infinite;
+  animation: reveal 15s infinite;
   margin-left:-35px;
-  animation: slidein 5s infinite;
+  animation: slidein 15s infinite;
 } 
 
 
@@ -189,25 +201,85 @@
 }
 
 @keyframes showup {
-    0% {opacity:0; margin-left:-800px; }
+    /* 0% {opacity:0; margin-left:-800px; }
     20% {opacity:1; margin-left:0px;}
     80% {opacity:1;  margin-left:0px; }
-    100% {opacity:0; margin-left:0px;}
+    100% {opacity:0; margin-left:0px;} */
+    0%{
+      opacity:0; margin-left:-800px; color: white;
+    }
+    31%{
+      opacity:0; margin-left:-800px; color: white;
+    }
+    54%{
+      opacity:1; margin-left:0px; color: white;
+    }
+    56%{
+      opacity:0;  margin-left:0px; color: black;
+    }
+    57%{
+      opacity:0; margin-left:0px; 
+    }
+    100%{
+      opacity:0; margin-left:-800px; 
+    }
 }
 
 @keyframes slidein {
-    0% { margin-left:-800px; }
+    /* 0% { margin-left:-800px; }
     20% { margin-left:-800px; }
     65% { margin-left:0px;  }
-    100% { margin-left:0px; }
+    100% { margin-left:0px; } */
+    0%{
+      margin-left:-800px; color: white;
+    }
+    31%{
+      margin-left:-800px; color: white;
+    }
+    39%{
+      margin-left:-800px;color: white;
+    }
+    50%{
+      margin-left:0px; color: white;
+    }
+    53%{
+      margin-left:0px; color: transparent;
+    }
+    90%{
+      margin-left:0px; color: transparent;
+    }
+    100%{
+      margin-left:-800px; color: white;
+    }
 }
 
 @keyframes reveal {
-    0% {opacity:0;width:0px;}
+    /* 0% {opacity:0;width:0px;}
     20% {opacity:1;width:0px;}
     30% {width:355px;}
     80% {opacity:1;}
-    100% {opacity:0;width:355px;}
+    100% {opacity:0;width:355px;} */
+    0%{
+      opacity:0;width:0px; color: white;
+    }
+    33%{
+      opacity:0;width:0px;color: white;
+    }
+    39%{
+      opacity:1;width:0px;color: white;
+    }
+    45%{
+      width:355px;color: white;
+    }
+    52%{
+      opacity:1;  color: white;
+    }
+    53%{
+      color: transparent;
+    }
+    100%{
+      opacity:0;width:0px;color: white;
+    }
 }
 
 
@@ -217,6 +289,25 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    animation: jummble 15s infinite;
+  }
+  @keyframes jummble {
+    0%{
+      visibility: hidden;
+    }
+    69%{
+      visibility: visible;
+    }
+    90%{
+      visibility: visible;
+    }
+    91%{
+      visibility: hidden;
+    }
+    100%{
+      visibility: hidden;
+    }
+    
   }
   #text1 {
     font-family: "Shadows Into Light", cursive;
