@@ -105,7 +105,7 @@
 
 #slide1 p{
     /* opacity: -5; */
-    animation: fadeInTop 4s ease forwards;
+    animation: fadeInTop 15s ease forwards;
   }
   
   @keyframes fadeInTop {
@@ -127,7 +127,7 @@
     }
     100%{
       opacity: 5;
-      color: white;
+      color: #c79382;
     }
 }
 
