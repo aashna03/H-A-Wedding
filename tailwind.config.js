@@ -8,6 +8,7 @@ module.exports = {
       // mmd:'515px',
       md: '768px',
       lg: '976px',
+      lgxl:'1308px',
       xl: '1440px',
     },
     fontSize: {
@@ -20,6 +21,7 @@ module.exports = {
       '2xl': '1.563rem',
       '3xl': '1.953rem',
       '4xl': '2.441rem',
+      // '4hxl': '2.48rem',
       '5xl': '3.052rem',
       '6xl': '4.501rem',
       '7xl': '5.501rem',
@@ -37,6 +39,26 @@ module.exports = {
     extend: {
       flex: {
         '2': '0 0 100%'
+      },
+      colors: {
+        'ganesha': '#E6BF96',
+        'invite_text': '#af4e29',
+        'name_text' : '#466100',
+        'address_head': '#51622f',
+        'address_text' : '#8d4450',
+        'mytxt' : '#b0733f',
+        'mymytxt' : '#6c4727',
+        'countdwn' :'#3b6069',
+        'andd' : '#456743',
+        'durgaji' : '#a9cec3',
+        'shyamji' : '#a9cec3',
+        'haldath' : '#e3d8b5',
+        'mayra' : '#ebcaca',
+        'sangeet' : '#ffc9d1',
+        'haldi' : '#e3d8b5',
+        'nikasii' : '#fbfcec',
+        'wed' : '#ebcaca',
+
       },
       fontFamily: {
         // Amita: ["Amita", "serif"],
