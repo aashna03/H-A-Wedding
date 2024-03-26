@@ -24,15 +24,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .home .slide:before{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0,0.5);
-} */
 .rubik-scribble-regular {
   font-family: "Rubik Scribble", system-ui;
   font-weight: 400;
@@ -79,18 +70,13 @@
 }
 .lovers-quarrel-regular {
   font-family: "Lovers Quarrel", cursive;
-  /* font-weight: 500; */
-  /* font-style: normal; */
 }
 .arizonia-regular {
   font-family: "Arizonia", cursive;
-  /* font-weight: 400; */
-  /* font-style: normal; */
 }
 .lobster-regular {
   font-family: "Lobster", sans-serif;
   font-weight: 100;
-  /* font-style: normal; */
 }
 .rouge-script-regular {
   font-family: "Rouge Script", cursive;
@@ -99,15 +85,12 @@
 }
 .dancing-script {
   font-family: "Dancing Script", cursive;
-  /* font-optical-sizing: auto; */
   font-weight: 900;
   font-style: normal;
 }
 .petit-formal{
   font-family: "Petit Formal Script", cursive;
   font-weight: 600;
-  /* font-size: x-small; */
-  /* font-style: normal; */
 }
 
 .home .slide{
@@ -127,7 +110,6 @@
   
   @keyframes fadeInTop {
       0%{
-          /* color: #996024; */
           color : #c79382;
       }
       100%{
@@ -136,10 +118,6 @@
       }
   }
 
-  /* section {
-    width: 100%;
-    height: auto;
-} */
   @keyframes typing {
     from { width: 0; }
     to { width: 100%; visibility: visible; }
@@ -149,7 +127,6 @@
     font-family: "Amita", serif;
     font-weight: 400;
     font-style: normal;
-    /* font-size: 50px; */
     overflow: hidden;
     white-space: nowrap;
     animation-name: typing;
@@ -167,7 +144,6 @@
     font-family: "Amita", serif;
     font-weight: 400;
     font-style: normal;
-    /* font-size: 50px; */
     overflow: hidden;
     white-space: nowrap;
     animation-name: typing;
@@ -180,9 +156,7 @@
   /* slide 2 -----------------==================== */
 
   .hna {
-  /* font-size: 80px; */
   color: #ffffff;
-  /* margin: 0; */
   font-weight: normal;
   font-family: 'Great Vibes';
   
@@ -202,37 +176,16 @@
   width:0px;
   animation: reveal 5s infinite;
   margin-left:-35px;
-  /* padding-top: -35px; */
   animation: slidein 5s infinite;
 } 
-/* .countdown{
-  
-  background-color: black;
-  opacity: 1;
-} */
-/* #countdown :before{
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: #000;
-  opacity: 0.2;
-  width: 100%;
-  height: 100%;
-} */
+
 
 #countdown{
-
-    /* background: url('/img/count_down.JPG') center center no-repeat; */
-    /* background-image: linear-gradient(rgba(77, 191, 217, 1),rgba(255, 255, 255, 0.3)) , url('/img/count_down.JPG'); */
-    /* background-image: linear-gradient(rgb(217, 198, 77),rgba(255, 255, 255, 0.3)) , url('/img/count_down.JPG'); */
-    /* background-image: linear-gradient(rgb(217, 156, 77),rgba(255, 255, 255, 0.3)) , url('/img/count_down.JPG'); */
-    /* background-image: linear-gradient(rgba(227,195,170),rgba(255, 255, 255, 0.3)) , url('/img/count_down.JPG'); */
     background: url('/img/count_down.JPG');
     background-size: cover;
     background-position: center;
     position: relative;
     background-attachment: fixed;
-
 }
 
 @keyframes showup {
@@ -261,76 +214,19 @@
 /* slide 3: hashtag ------------------=====================*/
 
 .container1 {
-    /* height: 100%; */
-    /* width: 100%; */
     justify-content: center;
     align-items: center;
     display: flex;
   }
   #text1 {
-    /* font-family: "Petit Formal Script", cursive; */
-    /* font-family: "Lovers Quarrel", cursive; */
-    /* font-family: "Fira Code", monospace; */
-    /* font-family: "Rubik Scribble", system-ui; */
     font-family: "Shadows Into Light", cursive;
     font-weight: 400;
     color: white;
   }
   .dud {
-    /* color: #919090; */
-    /* color: #456743; */
     color : rgba(255, 255, 255, 0.1);
   }
 
-
-/* hamburger menu-----------================= */
-
-.hamburger{
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    transition: all 0.25s;
-    position: relative;
-}
-
-.hamburger-top,
-.hamburger-middle,
-.hamburger-bottom{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 24px;
-    height: 2px;
-    background: black;
-
-    transform: rotate(0);
-    transition: all 0.5s;
-}
-
-.hamburger-middle{
-    transform: translateY(7px);
-}
-
-.hamburger-bottom{
-    transform: translateY(14px);
-}
-
-.open{
-    transform: rotate(90deg);
-    transform: translateY(0px);
-}
-
-.open .hamburger-top{
-    transform: rotate(45deg) translateY(6px) translate(6px);
-}
-
-.open .hamburger-middle{
-    display: none;
-}
-
-.open .hamburger-bottom{
-    transform: rotate(-45deg) translateY(6px) translate(-6px);
-}
 
 /* slide animation ////////////////////////////////// */
 
@@ -387,101 +283,49 @@
     }
 }
 /*----------------------------------------------------------------  */
-/* .seeyou{
-    background: url('../img/slide-1.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 50vh;
-    width: 100vw;
-  }
-  .hi{
-    position: absolute;
-    left: 50%; 
-    margin-top: 5rem;
-    transform: translateX(-50%);
-    width: 80%;
-  } */
-  
-  /* #countdown {
-      text-align: center;
-  } */
+
   
   #countdown .section-head h4 {
-    
-      /* position: relative; */
       font-family: "Dancing Script", cursive;
       font-weight: 400;
-      /* font-size: 60px; */
-      /* padding: 0; */
-      /* margin: 0; */
   }
-  
-  /* #countdown .section-head p { */
-      /* font-size: 24px; */
-      /* margin-bottom: 0; */
-  /* } */
-  
-  /* #countdown ul { */
-      /* margin-bottom: 0; */
-      /* text-align: center; */
-  /* } */
+
   
   #countdown li {
       font-family: 'Nunito Sans';
       font-weight: 400;
       display: inline-block;
-      /* font-size: 15px; */
       list-style-type: none;
-      /* margin:190px 80px 0 80px; */
-      /* line-height: 3em; */
-      /* text-align: center; */
       text-transform: uppercase;
       letter-spacing: 2px;
       
   }
   
   #countdown li num {
-      /* display: block; */
       font-family: 'Nunito Sans', sans-serif;
-      /* font-size: 60px; */
       font-weight: 700;
-      /* letter-spacing: -1px; */
   }
   
   @media (max-width: 768px) {
     #countdown .section-head h4{
-      /* font-size: 30px; */
       font-weight: 200;
-      /* padding: 0; */
-      /* margin: 0; */
       display: block;
     }
       #countdown li {
         margin: 0;
-          /* font-size: 8px; */
-          /* padding: 160px 0 0 30px; */
-          /* text-align: center; */
           display: inline-block;
       }
-      /* #countdown li span { */
-          /* font-size: 30px; */
-      /* } */
   }
   
   #countdown{
       background-repeat: no-repeat;
       height: 40vh;
-      /* width: 100vw; */
   }
   #countdown .section-head,
   #countdown .ul{
       position: absolute;
       left: 50%; 
-      /* margin-top: 5rem; */
       transform: translateX(-50%);
-      /* width: 100%; */
   }
 
   /* Events -================================================ */
@@ -499,15 +343,10 @@
     padding-right: 20px;
   }
   .timeline__content-title {
-    /* font-weight: normal; */
-    /* font-size: 66px; */
     margin: 15px 0 0 0;
     transition: 0.4s;
-    /* padding: 0 10px; */
     padding-top: 20px;
     box-sizing: border-box;
-    /* font-family: "Pathway Gothic One", sans-serif; */
-    /* color: #ab3939; */
     text-align: center;
   }
   .timeline__content-desc {
@@ -516,7 +355,6 @@
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.9);
     font-family: Cardo;
-    /* font-weight: normal; */
     line-height: 25px;
     text-align: center;
 
@@ -550,17 +388,12 @@
   }
   .timeline-item:before {
     content: attr(data-text);
-    /* letter-spacing: 3px; */
     width: 100%;
     position: absolute;
     color: rgba(255, 255, 255);
     font-size:35px;
-    /* font-size: 13px; */
     font-family: "Pathway Gothic One", sans-serif;
-    /* font-family: "Rouge Script", cursive; */
     border-left: 2px solid rgba(255, 255, 255, 0.5);
-    /* top: 70%; */
-    /* margin-top: 80px; */
     padding-left: 15px;
     opacity: 0;
     right: calc(-100% - 56px);
@@ -589,12 +422,8 @@
   }
   .timeline-item--active .timeline__content-title {
     margin: 90px 0 0 0;
-    /* color: rgba(255, 255, 255); */
-    /* color: #fff; */
-
   }
   .timeline-item--active .timeline__content-desc {
-    /* margin: 10px 0 0 0; */
     font-size: large;
     
   }
@@ -643,48 +472,10 @@
     top: 0;
     width: 100%;
     height: 100%;
-    /* backgroung color */
     background: rgba(99, 99, 99, 0.8);
     content: "";
   }
-  /* .timeline-header {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 80px;
-    position: relative;
-  } */
-  /* .timeline-header__title {
-    color: #fff;
-    font-size: 46px;
-    font-family: Cardo;
-    font-weight: normal;
-    margin: 0;
-  } */
-  /* .timeline-header__subtitle {
-    color: rgba(255, 255, 255, 0.5);
-    font-family: "Pathway Gothic One", sans-serif;
-    font-size: 16px;
-    letter-spacing: 5px;
-    margin: 10px 0 0 0;
-    font-weight: normal;
-  } */
   
-  /* .demo-footer {
-    padding: 60px 0;
-    text-align: center;
-  }
-  .demo-footer a {
-    color: #999;
-    display: inline-block;
-    font-family: Cardo;
-  } */
-
-
-  /* .gro_bri,.and{
-      font-weight: normal;
-      font-family: 'Great Vibes';
-  } */
-
   
 
   .audio-player {
