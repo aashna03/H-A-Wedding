@@ -222,12 +222,12 @@
 
 #countdown{
 
-    /* background: url('/img/slides/count_down.JPG') center center no-repeat; */
-    /* background-image: linear-gradient(rgba(77, 191, 217, 1),rgba(255, 255, 255, 0.3)) , url('/img/slides/count_down.JPG'); */
-    /* background-image: linear-gradient(rgb(217, 198, 77),rgba(255, 255, 255, 0.3)) , url('/img/slides/count_down.JPG'); */
-    /* background-image: linear-gradient(rgb(217, 156, 77),rgba(255, 255, 255, 0.3)) , url('/img/slides/count_down.JPG'); */
-    /* background-image: linear-gradient(rgba(227,195,170),rgba(255, 255, 255, 0.3)) , url('/img/slides/count_down.JPG'); */
-    background: url('/img/slides/count_down.JPG');
+    /* background: url('/img/count_down.JPG') center center no-repeat; */
+    /* background-image: linear-gradient(rgba(77, 191, 217, 1),rgba(255, 255, 255, 0.3)) , url('/img/count_down.JPG'); */
+    /* background-image: linear-gradient(rgb(217, 198, 77),rgba(255, 255, 255, 0.3)) , url('/img/count_down.JPG'); */
+    /* background-image: linear-gradient(rgb(217, 156, 77),rgba(255, 255, 255, 0.3)) , url('/img/count_down.JPG'); */
+    /* background-image: linear-gradient(rgba(227,195,170),rgba(255, 255, 255, 0.3)) , url('/img/count_down.JPG'); */
+    background: url('/img/count_down.JPG');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -340,16 +340,17 @@
 }
 @keyframes ani1 {
     0%{
-        background-image: url('../img/slides/ganesh ji.jpg');
+        background-image: url('../img/ganesh ji.jpg');
     }
     90%{
-        background-image: url('../img/slides/ganesh ji.jpg');
+        background-image: url('../img/ganesh ji.jpg');
         background-position: center;
     }
     100%{
         opacity: 5;
-        background-image: url('../img/slides/sl2.JPG');
+        background-image: url('../img/sl2.JPG');
         background-position: right;
+    
     }
 }
 
@@ -358,16 +359,16 @@
 }
 @keyframes ani2 {
     0%{
-        background-image: url('../img/slides/sl2.JPG');
+        background-image: url('../img/sl2.JPG');
         background-position: right;
     }
     90%{
-        background-image: url('../img/slides/sl2.JPG');
+        background-image: url('../img/sl2.JPG');
         background-position: center;
     }
     100%{
         opacity: 5;
-        background-image: url('../img/slides/sl3.JPG');
+        background-image: url('../img/sl3.JPG');
     }
 }
 .s3.active{
@@ -375,19 +376,19 @@
 }
 @keyframes ani3 {
     0%{
-        background-image: url('../img/slides/sl3.JPG');
+        background-image: url('../img/sl3.JPG');
     }
     90%{
-        background-image: url('../img/slides/sl3.JPG');
+        background-image: url('../img/sl3.JPG');
     }
     100%{
         opacity: 5;
-        background-image: url('../img/slides/ganesh ji.jpg');
+        background-image: url('../img/ganesh ji.jpg');
     }
 }
 /*----------------------------------------------------------------  */
 /* .seeyou{
-    background: url('../img/slides/slide-1.jpg');
+    background: url('../img/slide-1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
