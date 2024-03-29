@@ -105,7 +105,7 @@
 
 #slide1 p{
     /* opacity: -5; */
-    animation: fadeInTop 15s ease forwards;
+    animation: fadeInTop 15s ease forwards infinite;
   }
   
   @keyframes fadeInTop {
@@ -161,10 +161,11 @@
     font-style: normal;
     overflow: hidden;
     white-space: nowrap;
-    animation-name: typing;
-    animation-duration: 15s;
+/*     animation-name: typing; */
+/*     animation-duration: 15s;
     animation-timing-function: steps(200, end);
-    animation-iteration-count: 100;
+    animation-iteration-count: 100; */
+     animation: typing 15s infinite; 
   }
 
 
@@ -692,4 +693,3 @@
       }
     }
   }
-  
