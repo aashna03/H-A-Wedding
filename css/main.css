@@ -1006,11 +1006,11 @@ video {
   white-space:nowrap;
 }
 
-.har{
+.groom{
   animation: showup 15s infinite;
 }
 
-#anisha {
+#bride {
   width:0px;
   animation: reveal 15s infinite;
   margin-left:-35px;

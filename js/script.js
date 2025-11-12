@@ -177,8 +177,8 @@ class TextScramble {
   }}
 
   const phrases = [
-      'Anisha Harshit',
-      'Ishaq ka Sharansh'
+      'Nivedita Saurabh',
+      '#NiviAndSaurabhInSync'
     ];
     
     const el = document.querySelector('#text1');
