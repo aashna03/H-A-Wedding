@@ -374,19 +374,64 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   });
 
-  // Lightbox for timeline images
+  // Lightbox for timeline and gallery images
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxClose = document.getElementById('lightbox-close');
-  const timelineImgs = document.querySelectorAll('.timeline__img');
-  timelineImgs.forEach(img=> img.addEventListener('click', ()=>{
+  const gallerySelector = '.timeline__img, .gallery__img';
+  let galleryItems = Array.from(document.querySelectorAll(gallerySelector));
+
+  function openLightboxAt(index){
     if(!lightbox || !lightboxImg) return;
-    lightboxImg.src = img.src;
+    if(!galleryItems.length) return;
+    index = (index + galleryItems.length) % galleryItems.length;
+    const src = galleryItems[index].src;
+    lightboxImg.src = src;
+    lightboxImg.dataset.index = index;
     lightbox.setAttribute('aria-hidden','false');
-  }));
+    lightboxImg.classList.remove('zoomed');
+    lightboxImg.focus && lightboxImg.focus();
+  }
+
+  // click to open
+  galleryItems.forEach((img, idx)=> img.addEventListener('click', ()=> openLightboxAt(idx)));
+
+  // navigation buttons
+  const lbPrev = document.getElementById('lightbox-prev');
+  const lbNext = document.getElementById('lightbox-next');
+  lbPrev && lbPrev.addEventListener('click', ()=>{
+    const i = Number(lightboxImg.dataset.index || 0);
+    openLightboxAt(i-1);
+  });
+  lbNext && lbNext.addEventListener('click', ()=>{
+    const i = Number(lightboxImg.dataset.index || 0);
+    openLightboxAt(i+1);
+  });
+
+  // close handlers
   lightboxClose && lightboxClose.addEventListener('click', ()=> lightbox.setAttribute('aria-hidden','true'));
   const lbBackdrop = document.getElementById('lightbox-backdrop');
   lbBackdrop && lbBackdrop.addEventListener('click', ()=> lightbox.setAttribute('aria-hidden','true'));
+
+  // keyboard navigation and Escape
+  document.addEventListener('keydown', (e)=>{
+    if(lightbox && lightbox.getAttribute('aria-hidden') === 'false'){
+      if(e.key === 'Escape') lightbox.setAttribute('aria-hidden','true');
+      if(e.key === 'ArrowLeft'){
+        const i = Number(lightboxImg.dataset.index || 0); openLightboxAt(i-1);
+      }
+      if(e.key === 'ArrowRight'){
+        const i = Number(lightboxImg.dataset.index || 0); openLightboxAt(i+1);
+      }
+      if(e.key === ' ' || e.key === 'Spacebar'){ // toggle zoom on space
+        e.preventDefault();
+        lightboxImg.classList.toggle('zoomed');
+      }
+    }
+  });
+
+  // click on image toggles zoom
+  lightboxImg && lightboxImg.addEventListener('click', ()=> lightboxImg.classList.toggle('zoomed'));
 
   // Simple confetti: canvas-free approach creating emoji spans
   function showConfetti(){
@@ -404,6 +449,97 @@ document.addEventListener('DOMContentLoaded', function(){
     document.body.appendChild(box);
     setTimeout(()=> box.remove(), 2500);
   }
+
+  // RSVP Admin UI
+  const viewBtn = document.getElementById('view-rsvps');
+  const adminModal = document.getElementById('rsvp-admin');
+  const adminBackdrop = document.getElementById('rsvp-admin-backdrop');
+  const adminClose = document.getElementById('close-rsvp-admin');
+  const rsvpTbody = document.getElementById('rsvp-tbody');
+  const exportBtn = document.getElementById('export-rsvps');
+  const clearBtn = document.getElementById('clear-rsvps');
+
+  function getRSVPs(){
+    return JSON.parse(localStorage.getItem('rsvps')||'[]');
+  }
+
+  function renderRSVPs(){
+    if(!rsvpTbody) return;
+    const data = getRSVPs();
+    if(!data.length){
+      rsvpTbody.innerHTML = '<tr><td colspan="7" style="text-align:center">No RSVPs yet</td></tr>';
+      return;
+    }
+    rsvpTbody.innerHTML = data.map((d,i)=>{
+      return `
+        <tr>
+          <td>${i+1}</td>
+          <td>${escapeHtml(d.name||'')}</td>
+          <td>${escapeHtml(d.attend||'')}</td>
+          <td>${escapeHtml(d.count||'1')}</td>
+          <td>${escapeHtml(d.note||'')}</td>
+          <td>${escapeHtml(d.time||'')}</td>
+          <td><button class="delete-rsvp" data-index="${i}">Delete</button></td>
+        </tr>`;
+    }).join('');
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function openAdmin(){ if(!adminModal) return; adminModal.setAttribute('aria-hidden','false'); renderRSVPs(); }
+  function closeAdmin(){ if(!adminModal) return; adminModal.setAttribute('aria-hidden','true'); }
+
+  viewBtn && viewBtn.addEventListener('click', openAdmin);
+  adminClose && adminClose.addEventListener('click', closeAdmin);
+  adminBackdrop && adminBackdrop.addEventListener('click', closeAdmin);
+
+  // Delegate delete
+  rsvpTbody && rsvpTbody.addEventListener('click', function(e){
+    if(e.target && e.target.matches('.delete-rsvp')){
+      const idx = Number(e.target.getAttribute('data-index'));
+      const arr = getRSVPs();
+      if(!Number.isFinite(idx) || idx < 0 || idx >= arr.length) return;
+      arr.splice(idx,1);
+      localStorage.setItem('rsvps', JSON.stringify(arr));
+      renderRSVPs();
+    }
+  });
+
+  // Export CSV
+  exportBtn && exportBtn.addEventListener('click', function(){
+    const data = getRSVPs();
+    if(!data.length){ alert('No RSVPs to export'); return; }
+    const rows = ['name,attend,count,note,time', ...data.map(d=>[
+      (d.name||'').replace(/"/g,'""'),
+      (d.attend||''),
+      (d.count||'1'),
+      (d.note||'').replace(/"/g,'""'),
+      (d.time||'')
+    ].map(v=>`"${v}"`).join(','))];
+    const csv = rows.join('\n');
+    // download
+    const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'rsvps.csv';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  // Clear all
+  clearBtn && clearBtn.addEventListener('click', function(){
+    if(!confirm('Delete all RSVPs? This cannot be undone.')) return;
+    localStorage.removeItem('rsvps');
+    renderRSVPs();
+  });
+
+  // close admin with Escape
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeAdmin(); closeModal(); } });
 
 });
 

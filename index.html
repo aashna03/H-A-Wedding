@@ -7,7 +7,7 @@
         <link rel="icon" type="image/x-icon" href="/img/favicon.png">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/main.css?v=2">
         <!-- <link rel="stylesheet" href="input.css"> -->
     </head>
     <body>
@@ -270,7 +270,8 @@
         <!-- Sticky RSVP + Controls -->
         <div id="sticky-controls" aria-hidden="false">
             <button id="rsvp-btn" class="rsvp-cta" aria-haspopup="dialog">RSVP</button>
-            <button id="music-toggle" class="music-toggle" aria-pressed="false">♫</button>
+            <button id="view-rsvps" class="view-rsvps" title="View RSVPs">Guests</button>
+            <!-- <button id="music-toggle" class="music-toggle" aria-pressed="false">♫</button> -->
             <button id="share-btn" class="share-btn">Share</button>
         </div>
 
@@ -300,16 +301,53 @@
                     <button type="submit" class="submit-btn">Send RSVP</button>
                 </form>
             </div>
+
+                    <!-- RSVP Admin Modal -->
+                    <div id="rsvp-admin" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="rsvp-admin-title">
+                        <div class="modal-backdrop" id="rsvp-admin-backdrop"></div>
+                        <div class="modal-panel admin-panel">
+                            <button id="close-rsvp-admin" class="modal-close" aria-label="Close">✕</button>
+                            <h2 id="rsvp-admin-title">Guest RSVPs</h2>
+                            <div class="admin-controls">
+                                <button id="export-rsvps" class="submit-btn">Export CSV</button>
+                                <button id="clear-rsvps" class="submit-btn">Clear All</button>
+                            </div>
+                            <div class="admin-list">
+                                <table id="rsvp-table">
+                                    <thead><tr><th>#</th><th>Name</th><th>Attend</th><th>Count</th><th>Note</th><th>Time</th><th>Action</th></tr></thead>
+                                    <tbody id="rsvp-tbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
         </div>
 
         <!-- background music (optional file: place mm.mp3 at project root) -->
         <!-- <audio id="bg-music" src="mm.mp3" loop preload="auto"></audio> -->
 
         <!-- Lightbox for images -->
+        <!-- Pre-wedding gallery -->
+        <section id="prewedding" class="prewedding-section">
+            <div class="section-head text-center">
+                <h3 class="text-4xl">Pre-wedding Shoot</h3>
+                <p class="text-sm">A few moments from our shoot</p>
+            </div>
+            <div class="gallery-grid">
+                <img class="gallery__img" src="img/slide-1.jpg" alt="prewedding 1">
+                <img class="gallery__img" src="img/sl2.JPG" alt="prewedding 2">
+                <img class="gallery__img" src="img/sl3.JPG" alt="prewedding 3">
+                <img class="gallery__img" src="img/mayra.jpg" alt="prewedding 4">
+                <img class="gallery__img" src="img/sangeet.png" alt="prewedding 5">
+                <img class="gallery__img" src="img/wedding.png" alt="prewedding 6">
+            </div>
+        </section>
+
         <div id="lightbox" aria-hidden="true">
             <div id="lightbox-backdrop"></div>
             <button id="lightbox-close" aria-label="Close">✕</button>
-            <img id="lightbox-img" alt="Gallery image">
+            <button id="lightbox-prev" class="lightbox-nav" aria-label="Previous">‹</button>
+            <button id="lightbox-next" class="lightbox-nav" aria-label="Next">›</button>
+            <img id="lightbox-img" alt="Gallery image" tabindex="0">
         </div>
         </section>
 

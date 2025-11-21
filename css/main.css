@@ -1725,9 +1725,34 @@ video {
 #lightbox-img{ max-width:92%; max-height:86%; box-shadow:0 30px 60px rgba(0,0,0,0.6); border-radius:8px; z-index:2; }
 #lightbox-close{ position:absolute; right:18px; top:18px; z-index:3; background:transparent; border:none; color:white; font-size:20px; }
 
+/* lightbox navigation */
+.lightbox-nav{ position:absolute; top:50%; transform:translateY(-50%); z-index:3; background:rgba(0,0,0,0.45); color:white; border:none; width:44px; height:70px; font-size:36px; border-radius:8px; cursor:pointer; }
+#lightbox-prev{ left:18px; }
+#lightbox-next{ right:18px; }
+
+/* zoomed state */
+#lightbox-img.zoomed{ transform: scale(1.15); transition: transform .25s cubic-bezier(.2,.9,.2,1); cursor: zoom-out; }
+#lightbox-img{ transition: transform .25s cubic-bezier(.2,.9,.2,1); cursor: zoom-in; }
+
 .confetti-container{ position:fixed; left:0; right:0; top:0; bottom:0; pointer-events:none; z-index:100; overflow:visible; }
 .confetti{ position:absolute; top:10%; font-size:20px; transform-origin:center; animation: confetti-fall 2s ease-in forwards; opacity:0.95; }
 @keyframes confetti-fall{
   0%{ transform: translateY(-20vh) rotate(0) scale(1); opacity:1; }
   100%{ transform: translateY(80vh) rotate(720deg) scale(0.8); opacity:0; }
 }
+
+/* Admin modal styles */
+.admin-panel { max-height: 70vh; overflow: auto; }
+.admin-controls{ display:flex; gap:10px; margin-bottom:12px; }
+#rsvp-table{ width:100%; border-collapse: collapse; font-family: inherit; }
+#rsvp-table th, #rsvp-table td{ border:1px solid #eee; padding:8px 10px; font-size:0.95rem; }
+#rsvp-table thead th{ position: sticky; top: 0; background: #fff; z-index: 2; }
+.delete-rsvp{ background:#ff7b7b; color:white; border:none; padding:6px 8px; border-radius:6px; }
+.view-rsvps{ background: rgba(255,255,255,0.95); border-radius: 999px; padding: 8px 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border:none; font-weight:700; }
+
+/* Pre-wedding gallery */
+.prewedding-section{ padding: 40px 16px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.00)); }
+.prewedding-section .section-head h3{ margin: 0 0 8px 0; font-family: 'Playfair Display'; }
+.gallery-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:12px; max-width:1100px; margin:18px auto 0; }
+.gallery-grid img{ width:100%; height:160px; object-fit:cover; border-radius:8px; box-shadow:0 10px 20px rgba(0,0,0,0.12); cursor:pointer; transition: transform .25s ease, box-shadow .25s ease; }
+.gallery-grid img:hover{ transform: translateY(-6px) scale(1.02); box-shadow:0 20px 30px rgba(0,0,0,0.18); }
