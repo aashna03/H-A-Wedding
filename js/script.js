@@ -290,4 +290,117 @@ $.fn.timeline = function() {
 
 $("#timeline-1").timeline();
 
+// ----------------- RSVP modal, audio toggle, share, lightbox -----------------
+(function(){
+  const rsvpBtn = document.getElementById('rsvp-btn');
+  const rsvpModal = document.getElementById('rsvp-modal');
+  const rsvpBackdrop = document.getElementById('rsvp-backdrop');
+  const closeRsvp = document.getElementById('close-rsvp');
+  const rsvpForm = document.getElementById('rsvp-form');
+  const musicToggle = document.getElementById('music-toggle');
+  const bgMusic = document.getElementById('bg-music');
+  const shareBtn = document.getElementById('share-btn');
+
+  function openModal(){
+    rsvpModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    rsvpModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  rsvpBtn && rsvpBtn.addEventListener('click', ()=> openModal());
+  closeRsvp && closeRsvp.addEventListener('click', ()=> closeModal());
+  rsvpBackdrop && rsvpBackdrop.addEventListener('click', ()=> closeModal());
+
+  // Submit RSVP (client-only: saves to localStorage and shows confetti)
+  rsvpForm && rsvpForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = {
+      name: this.name.value,
+      attend: this.attend.value,
+      count: this.count.value,
+      note: this.note.value,
+      time: new Date().toISOString()
+    };
+    // store locally (could be sent to server)
+    const existing = JSON.parse(localStorage.getItem('rsvps')||'[]');
+    existing.push(data);
+    localStorage.setItem('rsvps', JSON.stringify(existing));
+    closeModal();
+    showConfetti();
+    alert('Thanks! Your RSVP has been recorded.');
+    this.reset();
+  });
+
+  // Music toggle with persistence
+  function applyMusicState(){
+    const on = localStorage.getItem('music-on') === '1';
+    if(on){
+      musicToggle.setAttribute('aria-pressed','true');
+      musicToggle.classList.add('on');
+      bgMusic && bgMusic.play().catch(()=>{});
+    } else {
+      musicToggle.setAttribute('aria-pressed','false');
+      musicToggle.classList.remove('on');
+      bgMusic && bgMusic.pause();
+    }
+  }
+  musicToggle && musicToggle.addEventListener('click', ()=>{
+    const on = localStorage.getItem('music-on') === '1';
+    localStorage.setItem('music-on', on ? '0' : '1');
+    applyMusicState();
+  });
+  // initialize
+  applyMusicState();
+
+  // Share button: Web Share API fallback to copy
+  shareBtn && shareBtn.addEventListener('click', async ()=>{
+    const shareData = { title: document.title, text: 'Join us for the wedding', url: location.href };
+    if(navigator.share){
+      try{ await navigator.share(shareData); }catch(e){}
+      return;
+    }
+    // fallback: copy to clipboard
+    try{
+      await navigator.clipboard.writeText(location.href);
+      alert('Invite link copied to clipboard');
+    }catch(e){
+      prompt('Copy this link', location.href);
+    }
+  });
+
+  // Lightbox for timeline images
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const timelineImgs = document.querySelectorAll('.timeline__img');
+  timelineImgs.forEach(img=> img.addEventListener('click', ()=>{
+    lightboxImg.src = img.src;
+    lightbox.setAttribute('aria-hidden','false');
+  }));
+  lightboxClose && lightboxClose.addEventListener('click', ()=> lightbox.setAttribute('aria-hidden','true'));
+  const lbBackdrop = document.getElementById('lightbox-backdrop');
+  lbBackdrop && lbBackdrop.addEventListener('click', ()=> lightbox.setAttribute('aria-hidden','true'));
+
+  // Simple confetti: canvas-free approach creating emoji spans
+  function showConfetti(){
+    const confettiCount = 24;
+    const box = document.createElement('div');
+    box.className = 'confetti-container';
+    for(let i=0;i<confettiCount;i++){
+      const s = document.createElement('span');
+      s.className = 'confetti';
+      s.style.left = (Math.random()*80 + 10)+'%';
+      s.style.animationDelay = (Math.random()*0.6)+'s';
+      s.textContent = ['✨','💖','🎉','🌸'][Math.floor(Math.random()*4)];
+      box.appendChild(s);
+    }
+    document.body.appendChild(box);
+    setTimeout(()=> box.remove(), 2500);
+  }
+
+})();
+
 

@@ -199,8 +199,8 @@
                             </div>
                             <div class="con_add text-smsm playfair-display xs:text-sm md:text-base ">
                                 <div>
-                                Address Line 1<br>Address Line 2<br>Address Line 3
-                                <br>
+                                <br>Address Line 1<br>Address Line 2<br>Address Line 3<br>
+                                <!-- <br> -->
                                 </div>
                                 <!-- <div> -->
                                 <!-- Address Line 1<br>Address Line 2<br>Address Line 3 -->
@@ -216,8 +216,10 @@
                                 Bride Side
                             </div>
                             <div class="con_add text-smsm playfair-display xs:text-sm md:text-base">
-                                <br><br><br>
-                                Address Line 1<br>Address Line 2<br>Address Line 3
+                                <div>
+                                    <br>
+                                Address Line 1<br>Address Line 2<br>Address Line 3<br>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -267,6 +269,51 @@
             <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
         <!-- <script src="" async defer></script> -->
         <!-- <audio autoplay loop src="mm.mp3"></audio> -->
+
+        <!-- Sticky RSVP + Controls -->
+        <div id="sticky-controls" aria-hidden="false">
+            <button id="rsvp-btn" class="rsvp-cta" aria-haspopup="dialog">RSVP</button>
+            <button id="music-toggle" class="music-toggle" aria-pressed="false">♫</button>
+            <button id="share-btn" class="share-btn">Share</button>
+        </div>
+
+        <!-- RSVP Modal -->
+        <div id="rsvp-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="rsvp-title">
+            <div class="modal-backdrop" id="rsvp-backdrop"></div>
+            <div class="modal-panel">
+                <button id="close-rsvp" class="modal-close" aria-label="Close">✕</button>
+                <h2 id="rsvp-title">RSVP</h2>
+                <form id="rsvp-form">
+                    <label for="guest-name">Name</label>
+                    <input id="guest-name" name="name" type="text" required>
+
+                    <label for="guest-attend">Will you attend?</label>
+                    <select id="guest-attend" name="attend" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="maybe">Maybe</option>
+                    </select>
+
+                    <label for="guest-count">Guests (including you)</label>
+                    <input id="guest-count" name="count" type="number" min="1" value="1">
+
+                    <label for="guest-note">Message (optional)</label>
+                    <textarea id="guest-note" name="note" rows="3"></textarea>
+
+                    <button type="submit" class="submit-btn">Send RSVP</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- background music (optional file: place mm.mp3 at project root) -->
+        <!-- <audio id="bg-music" src="mm.mp3" loop preload="auto"></audio> -->
+
+        <!-- Lightbox for images -->
+        <div id="lightbox" aria-hidden="true">
+            <div id="lightbox-backdrop"></div>
+            <button id="lightbox-close" aria-label="Close">✕</button>
+            <img id="lightbox-img" alt="Gallery image">
+        </div>
 
     </body>
 </html>
