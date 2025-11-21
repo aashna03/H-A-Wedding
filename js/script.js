@@ -291,7 +291,7 @@ $.fn.timeline = function() {
 $("#timeline-1").timeline();
 
 // ----------------- RSVP modal, audio toggle, share, lightbox -----------------
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   const rsvpBtn = document.getElementById('rsvp-btn');
   const rsvpModal = document.getElementById('rsvp-modal');
   const rsvpBackdrop = document.getElementById('rsvp-backdrop');
@@ -302,10 +302,12 @@ $("#timeline-1").timeline();
   const shareBtn = document.getElementById('share-btn');
 
   function openModal(){
+    if(!rsvpModal) return;
     rsvpModal.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
   }
   function closeModal(){
+    if(!rsvpModal) return;
     rsvpModal.setAttribute('aria-hidden','true');
     document.body.style.overflow = '';
   }
@@ -337,6 +339,7 @@ $("#timeline-1").timeline();
   // Music toggle with persistence
   function applyMusicState(){
     const on = localStorage.getItem('music-on') === '1';
+    if(!musicToggle) return;
     if(on){
       musicToggle.setAttribute('aria-pressed','true');
       musicToggle.classList.add('on');
@@ -377,6 +380,7 @@ $("#timeline-1").timeline();
   const lightboxClose = document.getElementById('lightbox-close');
   const timelineImgs = document.querySelectorAll('.timeline__img');
   timelineImgs.forEach(img=> img.addEventListener('click', ()=>{
+    if(!lightbox || !lightboxImg) return;
     lightboxImg.src = img.src;
     lightbox.setAttribute('aria-hidden','false');
   }));
@@ -401,6 +405,6 @@ $("#timeline-1").timeline();
     setTimeout(()=> box.remove(), 2500);
   }
 
-})();
+});
 
 
