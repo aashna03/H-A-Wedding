@@ -292,6 +292,40 @@ $("#timeline-1").timeline();
 
 // ----------------- RSVP modal, audio toggle, share, lightbox -----------------
 document.addEventListener('DOMContentLoaded', function(){
+  // // --- Debug helper: displays origin, element checks, and localStorage status ---
+  // (function debugInit(){
+  //   try{
+  //     const info = {
+  //       origin: location.origin,
+  //       href: location.href,
+  //       userAgent: navigator.userAgent,
+  //       localStorageOK: (function(){ try{ localStorage.setItem('_debug','1'); localStorage.removeItem('_debug'); return true;}catch(e){return false;} })(),
+  //       rsvpsCount: (function(){ try{ return JSON.parse(localStorage.getItem('rsvps')||'[]').length }catch(e){return 'err' } })(),
+  //       galleryItems: document.querySelectorAll('.timeline__img, .gallery__img').length,
+  //       cssHref: (function(){ const l = Array.from(document.querySelectorAll('link[rel=stylesheet]')).find(x=>x.href&&x.href.indexOf('main.css')>-1); return l?l.href:'not-found'; })()
+  //     };
+  //     console.groupCollapsed('E-Invite Debug');
+  //     console.log(info);
+  //     console.groupEnd();
+
+  //     // add small overlay to page so you can compare when opening different hosts
+  //     const panel = document.createElement('div');
+  //     panel.id = 'debug-panel';
+  //     panel.style.position = 'fixed';
+  //     panel.style.left = '12px';
+  //     panel.style.bottom = '12px';
+  //     panel.style.zIndex = 9999;
+  //     panel.style.background = 'rgba(0,0,0,0.6)';
+  //     panel.style.color = 'white';
+  //     panel.style.padding = '8px 10px';
+  //     panel.style.borderRadius = '8px';
+  //     panel.style.fontSize = '12px';
+  //     panel.style.fontFamily = 'system-ui,Segoe UI,Roboto,sans-serif';
+  //     panel.innerHTML = `host: ${info.origin}<br>rsvps: ${info.rsvpsCount} &nbsp; items: ${info.galleryItems}`;
+  //     document.body.appendChild(panel);
+  //   }catch(e){ console.warn('debugInit failed', e); }
+  // })();
+
   const rsvpBtn = document.getElementById('rsvp-btn');
   const rsvpModal = document.getElementById('rsvp-modal');
   const rsvpBackdrop = document.getElementById('rsvp-backdrop');
