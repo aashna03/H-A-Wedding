@@ -4,7 +4,7 @@ window.GALLERY_IMAGES = [
   "pre_wedding_shoot/photo2.PNG",
   "pre_wedding_shoot/photo3.PNG",
   "pre_wedding_shoot/photo4.PNG",
-  "pre_wedding_shoot/photo5.png",
+  "pre_wedding_shoot/photo5.PNG",
   "pre_wedding_shoot/photo6.PNG",
   "pre_wedding_shoot/photo7.PNG",
   "pre_wedding_shoot/photo8.PNG",
