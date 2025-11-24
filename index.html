@@ -332,13 +332,8 @@
                 <h3 class="text-4xl">Pre-wedding Shoot</h3>
                 <p class="text-sm">A few moments from our shoot</p>
             </div>
-            <div class="gallery-grid">
-                <img class="gallery__img" src="img/slide-1.jpg" alt="prewedding 1">
-                <img class="gallery__img" src="img/sl2.JPG" alt="prewedding 2">
-                <img class="gallery__img" src="img/sl3.JPG" alt="prewedding 3">
-                <img class="gallery__img" src="img/mayra.jpg" alt="prewedding 4">
-                <img class="gallery__img" src="img/sangeet.png" alt="prewedding 5">
-                <img class="gallery__img" src="img/wedding.png" alt="prewedding 6">
+            <div class="gallery-grid" aria-live="polite">
+                <!-- Gallery will be populated from img/pre_wedding_shoot by build script -->
             </div>
         </section>
 
@@ -353,5 +348,7 @@
 
         <script src="js/jquery.min.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/gallery-data.js"></script>
+        <script src="js/gallery-renderer.js"></script>
     </body>
 </html>

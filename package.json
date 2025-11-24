@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "node ./node_modules/tailwindcss/lib/cli.js -i ./input.css -o ./css/main.css",
+    "gen-gallery": "node ./scripts/generateGallery.js",
+    "build": "npm run gen-gallery && node ./node_modules/tailwindcss/lib/cli.js -i ./input.css -o ./css/main.css",
     "watch": "node ./node_modules/tailwindcss/lib/cli.js -i ./input.css -o ./css/main.css --watch"
   },
   "keywords": [],
