@@ -6,6 +6,9 @@
     if(!container) return;
     container.innerHTML = '';
     window.GALLERY_IMAGES.forEach((src, idx)=>{
+      const wrap = document.createElement('div');
+      wrap.className = 'gallery-item';
+
       const img = document.createElement('img');
       img.className = 'gallery__img';
       img.src = src;
@@ -14,7 +17,9 @@
       img.dataset.index = idx;
       img.addEventListener('click', openLightbox);
       img.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') openLightbox.call(img,e); });
-      container.appendChild(img);
+
+      wrap.appendChild(img);
+      container.appendChild(wrap);
     });
   }
 
