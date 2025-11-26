@@ -10,7 +10,7 @@
         // Random positioning and sizing
         const startLeft = Math.random() * 100;
         const size = Math.random() * 20 + 15; // 15px to 35px
-        const duration = Math.random() * 10 + 10; // 10s to 20s
+        const duration = Math.random() * 15 + 15; // 10s to 20s
         
         heart.style.left = startLeft + '%';
         heart.style.fontSize = size + 'px';

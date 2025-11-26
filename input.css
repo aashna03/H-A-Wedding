@@ -1145,7 +1145,7 @@
   }
 
   100% {
-    transform: scale(2);
+    transform: scale(4);
     opacity: 0;
   }
 }
