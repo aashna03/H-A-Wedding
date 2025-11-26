@@ -1,261 +1,316 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Saurabh and Nivedita</title>
-        <link rel="icon" type="image/x-icon" href="img/favicon.png">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main.css">
-        <!-- <link rel="stylesheet" href="input.css"> -->
-    </head>
-    <body>
-        <!-- <header class="absolute max-w-full w-full z-20"> -->
-            <!-- Navbar -->
-            <!-- <div> -->
-                <!-- <div class="audio-player"> -->
-                    <!-- <div class="timeline1"> -->
-                        <!-- <div class="progress"></div> -->
-                    <!-- </div> -->
-                    <!-- <div class="controls"> -->
-                        <!-- <div class="play-container"> -->
-                            <!-- <div class="toggle-play play"> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
-                        <!-- <div class="time"> -->
-                            <!-- <div class="current">0:00</div> -->
-                            <!-- <div class="divider">/</div> -->
-                            <!-- <div class="length"></div> -->
-                        <!-- </div> -->
-                        <!-- <div class="volume-container"> -->
-                            <!-- <div class="volume-button"> -->
-                                <!-- <div class="volume icono-volumeMedium"></div> -->
-                            <!-- </div> -->
-                        
-                            <!-- <div class="volume-slider"> -->
-                                <!-- <div class="volume-percentage"></div> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-                <!-- <div id="google_translate_element"></div> -->
-            <!-- </div> -->
-                    
-        <!-- </header> -->
 
-        <!-- home section -->
-        <section class="home z-0">
-            <!-- slide 1 : Ganesh Ji -->
-            <div class="s1 slide active absolute items-center h-screen w-full  bg-center bg-cover" id="slide1">
-                <div class=" pt-28 pl-10 md:pl-30 max-w-full">
-                    <div class="demo md:text-5xl sm:text-2xl xs:text-mid">
-                        <p id="dm1" >वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ: ।</p>
-                        <p id="dm2">निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Slide 2:  -->
-            <div class="s2 slide absolute h-screen w-full  bg-center bg-cover" >
-                <div class=" md:pl-30 max-w-full h-screen">
-                    <div class="hna text-4xl md:text-6xl md:pl-48">
-                        <div id="names">
-                            <div class="groom pt-80 pl-10 pr-10">Saurabh </div><span class="pl-12 md:pr-56" id="bride"><span >& </span>Nivedita</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- slide 3-->
-            <div class="s3 slide absolute h-screen w-full  bg-center bg-cover" >
-                <div class=" pt-28 md:pl-30 max-w-full h-screen">
-                    <div class="home-content">
-                        <div class="container1">
-                            <div id="text1" class="text-4xl md:text-5xl text-black" ></div>
-                          </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="h-screen">
-            
-            <div></div>
-        </section>
-        <!-- Countdown starts-->
-        <section class="cd max-w-full" id="cd">
-            <div id="countdown" class="text-white" >
-                <div class="ii">
-                    <div class="section-head md:text-5xl mt-16 md:mt-10 w-full text-center text-2xl  ">
-                        <h4>We will become a family in</h4>
-                    </div>
-                    <div>
-                        <ul class="text-center pt-28  md:pt-32">
-                            <li class="pr-3 md:pr-12"><span id="days" class="num block tracking-tightest md:text-3xl"></span><span class="tracking-tight text-sm  font-bold md:text-3xl">Days</span></li>  
-                            <li class="pr-3 md:pr-12"><span id="hours" class="num block tracking-tightest md:text-3xl"></span><span class="tracking-tight text-sm font-bold md:text-3xl">Hours</span></li>
-                            <li class="pr-3 md:pr-12"><span id="minutes" class="num block tracking-tightest md:text-3xl"></span><span class="tracking-tight text-sm font-bold md:text-3xl">Minutes</span></li>
-                            <li><span id="seconds" class="num block tracking-tightest md:text-3xl"></span><span class="tracking-tight text-sm font-bold md:text-3xl">Seconds</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Saurabh and Nivedita</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="input.css"> -->
+</head>
 
-        <!-- events starts -->
-        <section class="events" id="eve">
-            <div class="timeline-container" id="timeline-1">
-                <!-- <div class="timeline-header">
+<body>
+    <!-- <header class="absolute max-w-full w-full z-20"> -->
+    <!-- Navbar -->
+    <!-- <div> -->
+    <!-- <div class="audio-player"> -->
+    <!-- <div class="timeline1"> -->
+    <!-- <div class="progress"></div> -->
+    <!-- </div> -->
+    <!-- <div class="controls"> -->
+    <!-- <div class="play-container"> -->
+    <!-- <div class="toggle-play play"> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- <div class="time"> -->
+    <!-- <div class="current">0:00</div> -->
+    <!-- <div class="divider">/</div> -->
+    <!-- <div class="length"></div> -->
+    <!-- </div> -->
+    <!-- <div class="volume-container"> -->
+    <!-- <div class="volume-button"> -->
+    <!-- <div class="volume icono-volumeMedium"></div> -->
+    <!-- </div> -->
+
+    <!-- <div class="volume-slider"> -->
+    <!-- <div class="volume-percentage"></div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- <div id="google_translate_element"></div> -->
+    <!-- </div> -->
+
+    <!-- </header> -->
+
+    <!-- home section -->
+    <section class="home z-0">
+        <!-- slide 1 : Ganesh Ji -->
+        <div class="s1 slide active absolute items-center h-screen w-full  bg-center bg-cover" id="slide1">
+            <div class=" pt-28 pl-10 md:pl-30 max-w-full">
+                <div class="demo md:text-5xl sm:text-2xl xs:text-mid">
+                    <p id="dm1">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ: ।</p>
+                    <p id="dm2">निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2:  -->
+        <div class="s2 slide absolute h-screen w-full  bg-center bg-cover">
+            <div class=" md:pl-30 max-w-full h-screen">
+                <div class="hna text-4xl md:text-6xl md:pl-48">
+                    <div id="names">
+                        <div class="groom pt-80 pl-10 pr-10">Saurabh </div><span class="pl-12 md:pr-56"
+                            id="bride"><span>& </span>Nivedita</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slide 3-->
+        <div class="s3 slide absolute h-screen w-full  bg-center bg-cover">
+            <div class=" pt-28 md:pl-30 max-w-full h-screen">
+                <div class="home-content">
+                    <div class="container1">
+                        <div id="text1" class="text-4xl md:text-5xl text-black"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="h-screen">
+
+        <div></div>
+    </section>
+    <!-- Countdown starts-->
+    <section class="cd max-w-full" id="cd">
+        <div id="countdown" class="text-white">
+            <div class="ii">
+                <div class="section-head md:text-5xl mt-16 md:mt-10 w-full text-center text-2xl  ">
+                    <h4>We will become a family in</h4>
+                </div>
+                <div>
+                    <ul class="text-center pt-28  md:pt-32">
+                        <li class="pr-3 md:pr-12"><span id="days"
+                                class="num block tracking-tightest md:text-3xl"></span><span
+                                class="tracking-tight text-sm  font-bold md:text-3xl">Days</span></li>
+                        <li class="pr-3 md:pr-12"><span id="hours"
+                                class="num block tracking-tightest md:text-3xl"></span><span
+                                class="tracking-tight text-sm font-bold md:text-3xl">Hours</span></li>
+                        <li class="pr-3 md:pr-12"><span id="minutes"
+                                class="num block tracking-tightest md:text-3xl"></span><span
+                                class="tracking-tight text-sm font-bold md:text-3xl">Minutes</span></li>
+                        <li><span id="seconds" class="num block tracking-tightest md:text-3xl"></span><span
+                                class="tracking-tight text-sm font-bold md:text-3xl">Seconds</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-wedding gallery -->
+    <section id="prewedding" class="prewedding-section">
+        <div class="section-head text-center">
+            <h3 class="text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-nikasii">Pre-wedding Shoot</h3>
+            <!-- <p class="text-sm">A few moments from our shoot</p> -->
+        </div>
+        <div class="gallery-grid" aria-live="polite">
+            <!-- Gallery will be populated from img/pre_wedding_shoot by build script -->
+        </div>
+        <!-- Lightbox for images -->
+        <div id="lightbox" aria-hidden="true">
+            <div id="lightbox-backdrop"></div>
+            <button id="lightbox-close" aria-label="Close">✕</button>
+            <button id="lightbox-prev" class="lightbox-nav" aria-label="Previous">‹</button>
+            <button id="lightbox-next" class="lightbox-nav" aria-label="Next">›</button>
+            <img id="lightbox-img" alt="Gallery image" tabindex="0">
+        </div>
+    </section>
+
+    <!-- events starts -->
+    <section class="events" id="eve">
+        <div class="timeline-container" id="timeline-1">
+            <!-- <div class="timeline-header">
                     <h2 class="timeline-header__title">Events</h2>
                     <h3 class="timeline-header__subtitle"></h3>
                 </div> -->
-                <div class="timeline">
-                    <div class="timeline-item" data-text="12 April 2024">
-                    <div class="timeline__content"><img class="timeline__img" src="img/durga_path.jpg"/>
-                        <h2 class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-durgaji">Durga Ji Ka Paath</h2>
-                        <p class="timeline__content-desc xs:text-2xl">3:01 PM Onwards<br>Address Line 1<br>Address Line 2<br>Address Line 3</p>
+            <div class="timeline">
+                <!-- <div class="timeline-item" data-text="12 April 2024">
+                    <div class="timeline__content"><img class="timeline__img" src="img/durga_path.jpg" />
+                        <h2
+                            class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-durgaji">
+                            Durga Ji Ka Paath</h2>
+                        <p class="timeline__content-desc xs:text-2xl">3:01 PM Onwards<br>Address Line 1<br>Address Line
+                            2<br>Address Line 3</p>
                     </div>
+                </div> -->
+                <!-- <div class="timeline-item" data-text="13 April 2024">
+                    <div class="timeline__content"><img class="timeline__img" src="img/shyam_kirtan.jpg" />
+                        <h2
+                            class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-shyamji ">
+                            Shyam Kirtan</h2>
+                        <p class="timeline__content-desc xs:text-2xl">6:01 PM Onwards<br>Address Line 1<br>Address Line
+                            2<br>Address Line 3</p>
                     </div>
-                    <div class="timeline-item" data-text="13 April 2024">
-                    <div class="timeline__content"><img class="timeline__img" src="img/shyam_kirtan.jpg"/>
-                        <h2 class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-shyamji ">Shyam Kirtan</h2>
-                        <p class="timeline__content-desc xs:text-2xl">6:01 PM Onwards<br>Address Line 1<br>Address Line 2<br>Address Line 3</p>
-                    </div>
-                    </div>
-                    <!-- <div class="timeline-item" data-text="MEHENDI">
+                </div> -->
+                <!-- <div class="timeline-item" data-text="MEHENDI">
                     <div class="timeline__content"><img class="timeline__img" src="img/slide-3.jpg"/>
                         <h2 class="timeline__content-title text-2xl">15 April 2024</h2>
                         <p class="timeline__content-desc">Time: 6pm <br>Venue: Residence</p>
                     </div>
                     </div> -->
-                    <div class="timeline-item" data-text="14 April 2024">
-                    <div class="timeline__content"><img class="timeline__img" src="img/haldath.jpg"/>
-                        <h2 class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-haldath">Haldath</h2>
-                        <p class="timeline__content-desc xs:text-2xl">2:01 PM Onwards <br>Address Line 1<br>Address Line 2<br>Address Line 3</p>
+                <div class="timeline-item" data-text="14 April 2024">
+                    <div class="timeline__content"><img class="timeline__img" src="img/haldath.jpg" />
+                        <h2
+                            class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-haldath">
+                            Mehendi</h2>
+                        <p class="timeline__content-desc xs:text-2xl">2:01 PM Onwards <br>Address Line 1<br>Address Line
+                            2<br>Address Line 3</p>
                     </div>
+                </div>
+                <div class="timeline-item" data-text="17 April 2024">
+                    <div class="timeline__content"><img class="timeline__img" src="img/mayra.jpg" />
+                        <h2
+                            class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-mayra">
+                            Mayra</h2>
+                        <p class="timeline__content-desc xs:text-2xl">10:31 AM Onwards <br>Address Line 1<br>Address
+                            Line 2<br>Address Line 3</p>
                     </div>
-                    <div class="timeline-item" data-text="17 April 2024">
-                        <div class="timeline__content"><img class="timeline__img" src="img/mayra.jpg"/>
-                            <h2 class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-mayra">Mayra</h2>
-                            <p class="timeline__content-desc xs:text-2xl">10:31 AM Onwards <br>Address Line 1<br>Address Line 2<br>Address Line 3</p>
-                        </div>
-                        </div>
-                    <div class="timeline-item" data-text="17 April 2024">
-                    <div class="timeline__content"><img class="timeline__img" src="img/sangeet.png"/>
-                        <h2 class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-sangeet">Tilak & Sangeet</h2>
-                        <p class="timeline__content-desc xs:text-2xl">6:00 PM Onwards <br>Address Line 1<br>Address Line 2<br>Address Line 3</p>
+                </div>
+                <div class="timeline-item" data-text="17 April 2024">
+                    <div class="timeline__content"><img class="timeline__img" src="img/sangeet.png" />
+                        <h2
+                            class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-sangeet">
+                            Tilak & Sangeet</h2>
+                        <p class="timeline__content-desc xs:text-2xl">6:00 PM Onwards <br>Address Line 1<br>Address Line
+                            2<br>Address Line 3</p>
                     </div>
+                </div>
+                <div class="timeline-item" data-text="18 April 2024">
+                    <div class="timeline__content"><img class="timeline__img" src="img/telban.jpg" />
+                        <h2
+                            class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-haldi">
+                            Haldi & Telban</h2>
+                        <p class="timeline__content-desc xs:text-2xl">10:00 AM Onwards <br>Address Line 1<br>Address
+                            Line 2<br>Address Line 3</p>
                     </div>
-                    <div class="timeline-item" data-text="18 April 2024">
-                        <div class="timeline__content"><img class="timeline__img" src="img/telban.jpg"/>
-                            <h2 class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-haldi">Haldi & Telban</h2>
-                            <p class="timeline__content-desc xs:text-2xl">10:00 AM Onwards <br>Address Line 1<br>Address Line 2<br>Address Line 3</p>
-                        </div>
-                        </div>
-                    <div class="timeline-item" data-text="18 April 2024">
-                    <div class="timeline__content"><img class="timeline__img" src="img/nikasi.jpg"/>
-                        <h2 class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-nikasii">Nikasi (Barat)</h2>
-                        <p class="timeline__content-desc xs:text-2xl">6:00 PM Onwards <br>Address Line 1<br>Address Line 2<br>Address Line 3</p>
+                </div>
+                <!-- <div class="timeline-item" data-text="18 April 2024">
+                    <div class="timeline__content"><img class="timeline__img" src="img/nikasi.jpg" />
+                        <h2
+                            class="timeline__content-title text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-nikasii">
+                            Nikasi (Barat)</h2>
+                        <p class="timeline__content-desc xs:text-2xl">6:00 PM Onwards <br>Address Line 1<br>Address Line
+                            2<br>Address Line 3</p>
                     </div>
-                    </div>
-                    <div class="timeline-item" data-text="18 April 2024">
-                    <div class="timeline__content"><img class="timeline__img" src="img/wedding.png"/>
-                        <h2 class="timeline__content-title text-3xl xs:text-4xl md:text-5xl tangerine-regular text-wed">Wedding Ceremony</h2>
-                        <p class="timeline__content-desc text-xl xs:text-2xl">7:00 PM Onwards <br>Address Line 1<br>Address Line 2<br>Address Line 3<br><br><br></p>
-                    </div>
+                </div> -->
+                <div class="timeline-item" data-text="18 April 2024">
+                    <div class="timeline__content"><img class="timeline__img" src="img/wedding.png" />
+                        <h2 class="timeline__content-title text-3xl xs:text-4xl md:text-5xl tangerine-regular text-wed">
+                            Wedding Ceremony</h2>
+                        <p class="timeline__content-desc text-xl xs:text-2xl">7:00 PM Onwards <br>Address Line
+                            1<br>Address Line 2<br>Address Line 3<br><br><br></p>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- events ends -->
-        <section class="invite_msg h-1/2 bg-img bg-center bg-cover py-36 lgxl:py-52" style="background-image: url(img/slide-1.jpg)">
-            <div class="invite max-w-full text-center pb-24 text-invite_text" >
-                <div class="begin pb-10 pt-32  text-2xl rouge-script-regular xs:text-3xl md:text-5xl ">
-                    Saurabh family cordially invite you to the<br>Wedding Celebration of
-                </div>
-                <div class="gro_bri text-5xl lovers-quarrel-regular xs:text-6xl md:text-7xl text-name_text">
-                    Saurabh
-                </div>
-                <div class="fam text-sm lobster-regular xs:text-base md:text-mid">
-                    Grand S/o Smt. Radha ji & Prakash Ji Agarwal
-                    <br>
-                    S/o Smt. Shruti & Shri Raghav Agarwal
-                </div>
-                <div class="and p-10 text-4xl lovers-quarrel-regular xs:text-5xl xs:p-2 ">
-                    &
-                </div>
-                <div class="gro_bri text-5xl lovers-quarrel-regular xs:text-6xl md:text-7xl text-name_text">
-                    Nivedita
-                </div>
-                <div class="fam text-sm lobster-regular xs:text-base md:text-mid">
-                    Grand D/o Smt. Meera & Bikash Ji Agarwal
-                    <br>
-                    D/o Smt. Mehek & Kartik Ji Agarwal
-                </div>
+        </div>
+    </section>
+    <!-- events ends -->
+    <section class="invite_msg h-1/2 bg-img bg-center bg-cover py-36 lgxl:py-52"
+        style="background-image: url(img/slide-1.jpg)">
+        <div class="invite max-w-full text-center pb-24 text-invite_text">
+            <div class="begin pb-10 pt-32  text-2xl rouge-script-regular xs:text-3xl md:text-5xl ">
+                Saurabh family cordially invite you to the<br>Wedding Celebration of
             </div>
-            <div class="contact px-3 text-mytxt">
-                <div class="con max-w-full text-center text-smsm py-16 xs:py-8" >
-                    <div class="address  flex flex-row">
-                        <div class="gro_add w-1/2">
-                            <div class="con_head text-xl petit-formal xs:text-2xl md:text-3xl text-address_head">
-                                Groom Side
-                            </div>
-                            <div class="con_add text-smsm playfair-display xs:text-sm md:text-base ">
-                                <div>
+            <div class="gro_bri text-5xl lovers-quarrel-regular xs:text-6xl md:text-7xl text-name_text">
+                Saurabh
+            </div>
+            <div class="fam text-sm lobster-regular xs:text-base md:text-mid">
+                Grand S/o Smt. Radha ji & Prakash Ji Agarwal
+                <br>
+                S/o Smt. Shruti & Shri Raghav Agarwal
+            </div>
+            <div class="and p-10 text-4xl lovers-quarrel-regular xs:text-5xl xs:p-2 ">
+                &
+            </div>
+            <div class="gro_bri text-5xl lovers-quarrel-regular xs:text-6xl md:text-7xl text-name_text">
+                Nivedita
+            </div>
+            <div class="fam text-sm lobster-regular xs:text-base md:text-mid">
+                Grand D/o Smt. Meera & Bikash Ji Agarwal
+                <br>
+                D/o Smt. Mehek & Kartik Ji Agarwal
+            </div>
+        </div>
+        <div class="contact px-3 text-mytxt">
+            <div class="con max-w-full text-center text-smsm py-16 xs:py-8">
+                <div class="address  flex flex-row">
+                    <div class="gro_add w-1/2">
+                        <div class="con_head text-xl petit-formal xs:text-2xl md:text-3xl text-address_head">
+                            Groom Side
+                        </div>
+                        <div class="con_add text-smsm playfair-display xs:text-sm md:text-base ">
+                            <div>
                                 <br>Address Line 1<br>Address Line 2<br>Address Line 3<br>
                                 <!-- <br> -->
-                                </div>
-                                <!-- <div> -->
-                                <!-- Address Line 1<br>Address Line 2<br>Address Line 3 -->
-                                <!-- <br> -->
+                            </div>
+                            <!-- <div> -->
+                            <!-- Address Line 1<br>Address Line 2<br>Address Line 3 -->
+                            <!-- <br> -->
                             <!-- </div> -->
                             <!-- <div> -->
-                                <!-- Address Line 1<br>Address Line 2<br>Address Line 3 -->
+                            <!-- Address Line 1<br>Address Line 2<br>Address Line 3 -->
                             <!-- </div> -->
-                            </div>
-                        </div>
-                        <div class="bride_add w-1/2">
-                            <div class="con_head text-xl petit-formal xs:text-2xl md:text-3xl text-address_head">
-                                Bride Side
-                            </div>
-                            <div class="con_add text-smsm playfair-display xs:text-sm md:text-base">
-                                <div>
-                                    <br>
-                                Address Line 1<br>Address Line 2<br>Address Line 3<br>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <div class="blessings flex flex-row  pt-10 md:pt-5">
-
-                        
-                        <div class="well_wishers w-1/2 ">
-                            <div class="well_head text-xl dancing-script xs:text-2xl text-address_head">
-                                Well Wishers
-                            </div>
-                            <div class="well_peps text-smsm playfair-display xs:text-sm md:text-base">
-                                <br>Aryaman <br> Vivek 
-                            </div>
+                    <div class="bride_add w-1/2">
+                        <div class="con_head text-xl petit-formal xs:text-2xl md:text-3xl text-address_head">
+                            Bride Side
                         </div>
-
-                        <div class="vinit w-1/2 ">
-                            <div class="vinit_head text-xl dancing-script xs:text-2xl text-address_head">
-                                Vinit
-                            </div>
-                            <div class="vinit_name text-smsm playfair-display xs:text-sm md:text-base">
+                        <div class="con_add text-smsm playfair-display xs:text-sm md:text-base">
+                            <div>
                                 <br>
-                                 Arjun <br> Vijay
+                                Address Line 1<br>Address Line 2<br>Address Line 3<br>
                             </div>
                         </div>
-                        
-                        
-                    </div>
-                    <div class="my_msg pt-10 lovers-quarrel-regular text-2xl xs:text-3xl md:text-5xl text-mymytxt" style="font-weight: 700">
-                        <span class="rouge-script-regular text-xl xs:text-2xl md:text-3xl" >Turn the page of your book and take a deep breath as</span><br>A New Chapter Is About To begin.
-                    </div>
-                    <div class="myself alex-brush-regular text-xl xs:text-2xl md:text-3xl  text-mymytxt">
-                        ~ Author
                     </div>
                 </div>
-    
+                <div class="blessings flex flex-row  pt-10 md:pt-5">
+
+
+                    <div class="well_wishers w-1/2 ">
+                        <div class="well_head text-xl dancing-script xs:text-2xl text-address_head">
+                            Well Wishers
+                        </div>
+                        <div class="well_peps text-smsm playfair-display xs:text-sm md:text-base">
+                            <br>Aryaman <br> Vivek
+                        </div>
+                    </div>
+
+                    <div class="vinit w-1/2 ">
+                        <div class="vinit_head text-xl dancing-script xs:text-2xl text-address_head">
+                            Vinit
+                        </div>
+                        <div class="vinit_name text-smsm playfair-display xs:text-sm md:text-base">
+                            <br>
+                            Arjun <br> Vijay
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="my_msg pt-10 lovers-quarrel-regular text-2xl xs:text-3xl md:text-5xl text-mymytxt"
+                    style="font-weight: 700">
+                    <span class="rouge-script-regular text-xl xs:text-2xl md:text-3xl">Turn the page of your book and
+                        take a deep breath as</span><br>A New Chapter Is About To begin.
+                </div>
+                <div class="myself alex-brush-regular text-xl xs:text-2xl md:text-3xl  text-mymytxt">
+                    ~ Author
+                </div>
             </div>
+
+        </div>
 
         <!-- <script type="text/javascript">
             function googleTranslateElementInit() {
@@ -276,7 +331,8 @@
         </div>
 
         <!-- RSVP Modal -->
-        <div id="rsvp-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="rsvp-title">
+        <div id="rsvp-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true"
+            aria-labelledby="rsvp-title">
             <div class="modal-backdrop" id="rsvp-backdrop"></div>
             <div class="modal-panel">
                 <button id="close-rsvp" class="modal-close" aria-label="Close">✕</button>
@@ -302,53 +358,55 @@
                 </form>
             </div>
 
-                    <!-- RSVP Admin Modal -->
-                    <div id="rsvp-admin" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="rsvp-admin-title">
-                        <div class="modal-backdrop" id="rsvp-admin-backdrop"></div>
-                        <div class="modal-panel admin-panel">
-                            <button id="close-rsvp-admin" class="modal-close" aria-label="Close">✕</button>
-                            <h2 id="rsvp-admin-title">Guest RSVPs</h2>
-                            <div class="admin-controls">
-                                <button id="export-rsvps" class="submit-btn">Export CSV</button>
-                                <button id="clear-rsvps" class="submit-btn">Clear All</button>
-                            </div>
-                            <div class="admin-list">
-                                <table id="rsvp-table">
-                                    <thead><tr><th>#</th><th>Name</th><th>Attend</th><th>Count</th><th>Note</th><th>Time</th><th>Action</th></tr></thead>
-                                    <tbody id="rsvp-tbody"></tbody>
-                                </table>
-                            </div>
-                        </div>
+            <!-- RSVP Admin Modal -->
+            <div id="rsvp-admin" class="modal" role="dialog" aria-modal="true" aria-hidden="true"
+                aria-labelledby="rsvp-admin-title">
+                <div class="modal-backdrop" id="rsvp-admin-backdrop"></div>
+                <div class="modal-panel admin-panel">
+                    <button id="close-rsvp-admin" class="modal-close" aria-label="Close">✕</button>
+                    <h2 id="rsvp-admin-title">Guest RSVPs</h2>
+                    <div class="admin-controls">
+                        <button id="export-rsvps" class="submit-btn">Export CSV</button>
+                        <button id="clear-rsvps" class="submit-btn">Clear All</button>
                     </div>
+                    <div class="admin-list">
+                        <table id="rsvp-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Attend</th>
+                                    <th>Count</th>
+                                    <th>Note</th>
+                                    <th>Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rsvp-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- background music (optional file: place mm.mp3 at project root) -->
         <!-- <audio id="bg-music" src="mm.mp3" loop preload="auto"></audio> -->
 
         <!-- Lightbox for images -->
-        <!-- Pre-wedding gallery -->
-        <section id="prewedding" class="prewedding-section">
-            <div class="section-head text-center">
-                <h3 class="text-3xl xs:text-4xl md:text-5xl  tangerine-regular text-nikasii">Pre-wedding Shoot</h3>
-                <!-- <p class="text-sm">A few moments from our shoot</p> -->
-            </div>
-            <div class="gallery-grid" aria-live="polite">
-                <!-- Gallery will be populated from img/pre_wedding_shoot by build script -->
-            </div>
-        </section>
-
-        <div id="lightbox" aria-hidden="true">
+        <!-- <div id="lightbox" aria-hidden="true">
             <div id="lightbox-backdrop"></div>
             <button id="lightbox-close" aria-label="Close">✕</button>
             <button id="lightbox-prev" class="lightbox-nav" aria-label="Previous">‹</button>
             <button id="lightbox-next" class="lightbox-nav" aria-label="Next">›</button>
             <img id="lightbox-img" alt="Gallery image" tabindex="0">
-        </div>
-        </section>
+        </div> -->
+    </section>
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/gallery-data.js"></script>
-        <script src="js/gallery-renderer.js"></script>
-    </body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/gallery-data.js"></script>
+    <script src="js/gallery-renderer.js"></script>
+    <script src="js/hearts.js"></script>
+</body>
+
 </html>
