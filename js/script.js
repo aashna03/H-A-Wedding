@@ -589,7 +589,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = 'hidden';
   }
 
-  function closeMapModal() {
+  function closeMapModal(e) {
+    if (e) e.preventDefault();
     if (!mapModal) return;
     mapModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
