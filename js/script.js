@@ -1,17 +1,17 @@
 // home page-----------------------------------------------------------------
-$(window).on("load", function(){
+$(window).on("load", function () {
   let slideIndex = $(".slide.active").index();
   const slideLen = $(".slide").length;
-  function slideShow(){
-      
-      $(".slide").removeClass("active").eq(slideIndex).addClass("active");
-      if(slideIndex == slideLen-1){
-          slideIndex = 0;
-      }
-      else{
-          slideIndex++;
-      }
-      setTimeout(slideShow, 5000);
+  function slideShow() {
+
+    $(".slide").removeClass("active").eq(slideIndex).addClass("active");
+    if (slideIndex == slideLen - 1) {
+      slideIndex = 0;
+    }
+    else {
+      slideIndex++;
+    }
+    setTimeout(slideShow, 5000);
   }
   slideShow();
 });
@@ -174,124 +174,125 @@ class TextScramble {
   }
   randomChar() {
     return this.chars[Math.floor(Math.random() * this.chars.length)];
-  }}
+  }
+}
 
-  const phrases = [
-      'Nivedita Saurabh',
-      '#NiviAndSaurabhInSync'
-    ];
-    
-    const el = document.querySelector('#text1');
-    const fx = new TextScramble(el);
-    
-    let counter = 0;
-    const next = () => {
-      fx.setText(phrases[counter]).then(() => {
-        setTimeout(next, 1700);
-      });
-      counter = (counter + 1) % phrases.length;
-    };
-    
-    next();
+const phrases = [
+  'Nivedita Saurabh',
+  '#NiviAndSaurabhInSync'
+];
+
+const el = document.querySelector('#text1');
+const fx = new TextScramble(el);
+
+let counter = 0;
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 1700);
+  });
+  counter = (counter + 1) % phrases.length;
+};
+
+next();
 
 
-    // countdown algo------------------------------------------------------
+// countdown algo------------------------------------------------------
 (function () {
   const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
   let birthday = "April 18, 2024 17:30:00",
-      countDown = new Date(birthday).getTime(),
-      x = setInterval(function() {    
-        let now = new Date().getTime(),
-            distance = countDown - now;
+    countDown = new Date(birthday).getTime(),
+    x = setInterval(function () {
+      let now = new Date().getTime(),
+        distance = countDown - now;
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+      document.getElementById("days").innerText = Math.floor(distance / (day)),
+        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
 
-        //do something later when date is reached
-        if (distance < 0) {
-          let headline = document.getElementById("headline"),
-              countdown = document.getElementById("countdown"),
-              content = document.getElementById("content");
+      //do something later when date is reached
+      if (distance < 0) {
+        let headline = document.getElementById("headline"),
+          countdown = document.getElementById("countdown"),
+          content = document.getElementById("content");
 
-          headline.innerText = "It's our wedding!";
-          countdown.style.display = "none";
-          content.style.display = "block";
+        headline.innerText = "It's our wedding!";
+        countdown.style.display = "none";
+        content.style.display = "block";
 
-          clearInterval(x);
-        }
-        //seconds
-      }, 0)
+        clearInterval(x);
+      }
+      //seconds
+    }, 0)
 }());
 
 
 // Events-=========================================
 
-(function($) {
-$.fn.timeline = function() {
-  var selectors = {
-    id: $(this),
-    item: $(this).find(".timeline-item"),
-    activeClass: "timeline-item--active",
-    img: ".timeline__img"
-  };
-  selectors.item.eq(0).addClass(selectors.activeClass);
-  selectors.id.css(
-    "background-image",
-    "url(" +
+(function ($) {
+  $.fn.timeline = function () {
+    var selectors = {
+      id: $(this),
+      item: $(this).find(".timeline-item"),
+      activeClass: "timeline-item--active",
+      img: ".timeline__img"
+    };
+    selectors.item.eq(0).addClass(selectors.activeClass);
+    selectors.id.css(
+      "background-image",
+      "url(" +
       selectors.item
         .first()
         .find(selectors.img)
         .attr("src") +
       ")"
-  );
-  var itemLength = selectors.item.length;
-  $(window).scroll(function() {
-    var max, min;
-    var pos = $(this).scrollTop();
-    selectors.item.each(function(i) {
-      min = $(this).offset().top;
-      max = $(this).height() + $(this).offset().top;
-      var that = $(this);
-      if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
-          
-        selectors.item.removeClass(selectors.activeClass);
-        selectors.id.css(
-          "background-image",
-          "url(" +
+    );
+    var itemLength = selectors.item.length;
+    $(window).scroll(function () {
+      var max, min;
+      var pos = $(this).scrollTop();
+      selectors.item.each(function (i) {
+        min = $(this).offset().top;
+        max = $(this).height() + $(this).offset().top;
+        var that = $(this);
+        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+
+          selectors.item.removeClass(selectors.activeClass);
+          selectors.id.css(
+            "background-image",
+            "url(" +
             selectors.item
               .last()
               .find(selectors.img)
               .attr("src") +
             ")"
-        );
-        selectors.item.last().addClass(selectors.activeClass);
-      } else if (pos <= max - 100 && pos >= min) {
+          );
+          selectors.item.last().addClass(selectors.activeClass);
+        } else if (pos <= max - 100 && pos >= min) {
           // console.log(min,' ',max);
-        selectors.id.css(
-          "background-image",
-          "url(" +
+          selectors.id.css(
+            "background-image",
+            "url(" +
             $(this)
               .find(selectors.img)
               .attr("src") +
             ")"
-        );
-        selectors.item.removeClass(selectors.activeClass);
-        $(this).addClass(selectors.activeClass);
-      }
+          );
+          selectors.item.removeClass(selectors.activeClass);
+          $(this).addClass(selectors.activeClass);
+        }
+      });
     });
-  });
-};
+  };
 })(jQuery);
 
 $("#timeline-1").timeline();
 
 // ----------------- RSVP modal, audio toggle, share, lightbox -----------------
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
   // // --- Debug helper: displays origin, element checks, and localStorage status ---
   // (function debugInit(){
   //   try{
@@ -335,23 +336,23 @@ document.addEventListener('DOMContentLoaded', function(){
   const bgMusic = document.getElementById('bg-music');
   const shareBtn = document.getElementById('share-btn');
 
-  function openModal(){
-    if(!rsvpModal) return;
-    rsvpModal.setAttribute('aria-hidden','false');
+  function openModal() {
+    if (!rsvpModal) return;
+    rsvpModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
-  function closeModal(){
-    if(!rsvpModal) return;
-    rsvpModal.setAttribute('aria-hidden','true');
+  function closeModal() {
+    if (!rsvpModal) return;
+    rsvpModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 
-  rsvpBtn && rsvpBtn.addEventListener('click', ()=> openModal());
-  closeRsvp && closeRsvp.addEventListener('click', ()=> closeModal());
-  rsvpBackdrop && rsvpBackdrop.addEventListener('click', ()=> closeModal());
+  rsvpBtn && rsvpBtn.addEventListener('click', () => openModal());
+  closeRsvp && closeRsvp.addEventListener('click', () => closeModal());
+  rsvpBackdrop && rsvpBackdrop.addEventListener('click', () => closeModal());
 
   // Submit RSVP (client-only: saves to localStorage and shows confetti)
-  rsvpForm && rsvpForm.addEventListener('submit', function(e){
+  rsvpForm && rsvpForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const data = {
       name: this.name.value,
@@ -361,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function(){
       time: new Date().toISOString()
     };
     // store locally (could be sent to server)
-    const existing = JSON.parse(localStorage.getItem('rsvps')||'[]');
+    const existing = JSON.parse(localStorage.getItem('rsvps') || '[]');
     existing.push(data);
     localStorage.setItem('rsvps', JSON.stringify(existing));
     closeModal();
@@ -371,20 +372,20 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   // Music toggle with persistence
-  function applyMusicState(){
+  function applyMusicState() {
     const on = localStorage.getItem('music-on') === '1';
-    if(!musicToggle) return;
-    if(on){
-      musicToggle.setAttribute('aria-pressed','true');
+    if (!musicToggle) return;
+    if (on) {
+      musicToggle.setAttribute('aria-pressed', 'true');
       musicToggle.classList.add('on');
-      bgMusic && bgMusic.play().catch(()=>{});
+      bgMusic && bgMusic.play().catch(() => { });
     } else {
-      musicToggle.setAttribute('aria-pressed','false');
+      musicToggle.setAttribute('aria-pressed', 'false');
       musicToggle.classList.remove('on');
       bgMusic && bgMusic.pause();
     }
   }
-  musicToggle && musicToggle.addEventListener('click', ()=>{
+  musicToggle && musicToggle.addEventListener('click', () => {
     const on = localStorage.getItem('music-on') === '1';
     localStorage.setItem('music-on', on ? '0' : '1');
     applyMusicState();
@@ -393,17 +394,17 @@ document.addEventListener('DOMContentLoaded', function(){
   applyMusicState();
 
   // Share button: Web Share API fallback to copy
-  shareBtn && shareBtn.addEventListener('click', async ()=>{
+  shareBtn && shareBtn.addEventListener('click', async () => {
     const shareData = { title: document.title, text: 'Join us for the wedding', url: location.href };
-    if(navigator.share){
-      try{ await navigator.share(shareData); }catch(e){}
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (e) { }
       return;
     }
     // fallback: copy to clipboard
-    try{
+    try {
       await navigator.clipboard.writeText(location.href);
       alert('Invite link copied to clipboard');
-    }catch(e){
+    } catch (e) {
       prompt('Copy this link', location.href);
     }
   });
@@ -415,49 +416,49 @@ document.addEventListener('DOMContentLoaded', function(){
   const gallerySelector = '.timeline__img, .gallery__img';
   let galleryItems = Array.from(document.querySelectorAll(gallerySelector));
 
-  function openLightboxAt(index){
-    if(!lightbox || !lightboxImg) return;
-    if(!galleryItems.length) return;
+  function openLightboxAt(index) {
+    if (!lightbox || !lightboxImg) return;
+    if (!galleryItems.length) return;
     index = (index + galleryItems.length) % galleryItems.length;
     const src = galleryItems[index].src;
     lightboxImg.src = src;
     lightboxImg.dataset.index = index;
-    lightbox.setAttribute('aria-hidden','false');
+    lightbox.setAttribute('aria-hidden', 'false');
     lightboxImg.classList.remove('zoomed');
     lightboxImg.focus && lightboxImg.focus();
   }
 
   // click to open
-  galleryItems.forEach((img, idx)=> img.addEventListener('click', ()=> openLightboxAt(idx)));
+  galleryItems.forEach((img, idx) => img.addEventListener('click', () => openLightboxAt(idx)));
 
   // navigation buttons
   const lbPrev = document.getElementById('lightbox-prev');
   const lbNext = document.getElementById('lightbox-next');
-  lbPrev && lbPrev.addEventListener('click', ()=>{
+  lbPrev && lbPrev.addEventListener('click', () => {
     const i = Number(lightboxImg.dataset.index || 0);
-    openLightboxAt(i-1);
+    openLightboxAt(i - 1);
   });
-  lbNext && lbNext.addEventListener('click', ()=>{
+  lbNext && lbNext.addEventListener('click', () => {
     const i = Number(lightboxImg.dataset.index || 0);
-    openLightboxAt(i+1);
+    openLightboxAt(i + 1);
   });
 
   // close handlers
-  lightboxClose && lightboxClose.addEventListener('click', ()=> lightbox.setAttribute('aria-hidden','true'));
+  lightboxClose && lightboxClose.addEventListener('click', () => lightbox.setAttribute('aria-hidden', 'true'));
   const lbBackdrop = document.getElementById('lightbox-backdrop');
-  lbBackdrop && lbBackdrop.addEventListener('click', ()=> lightbox.setAttribute('aria-hidden','true'));
+  lbBackdrop && lbBackdrop.addEventListener('click', () => lightbox.setAttribute('aria-hidden', 'true'));
 
   // keyboard navigation and Escape
-  document.addEventListener('keydown', (e)=>{
-    if(lightbox && lightbox.getAttribute('aria-hidden') === 'false'){
-      if(e.key === 'Escape') lightbox.setAttribute('aria-hidden','true');
-      if(e.key === 'ArrowLeft'){
-        const i = Number(lightboxImg.dataset.index || 0); openLightboxAt(i-1);
+  document.addEventListener('keydown', (e) => {
+    if (lightbox && lightbox.getAttribute('aria-hidden') === 'false') {
+      if (e.key === 'Escape') lightbox.setAttribute('aria-hidden', 'true');
+      if (e.key === 'ArrowLeft') {
+        const i = Number(lightboxImg.dataset.index || 0); openLightboxAt(i - 1);
       }
-      if(e.key === 'ArrowRight'){
-        const i = Number(lightboxImg.dataset.index || 0); openLightboxAt(i+1);
+      if (e.key === 'ArrowRight') {
+        const i = Number(lightboxImg.dataset.index || 0); openLightboxAt(i + 1);
       }
-      if(e.key === ' ' || e.key === 'Spacebar'){ // toggle zoom on space
+      if (e.key === ' ' || e.key === 'Spacebar') { // toggle zoom on space
         e.preventDefault();
         lightboxImg.classList.toggle('zoomed');
       }
@@ -465,23 +466,23 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   // click on image toggles zoom
-  lightboxImg && lightboxImg.addEventListener('click', ()=> lightboxImg.classList.toggle('zoomed'));
+  lightboxImg && lightboxImg.addEventListener('click', () => lightboxImg.classList.toggle('zoomed'));
 
   // Simple confetti: canvas-free approach creating emoji spans
-  function showConfetti(){
+  function showConfetti() {
     const confettiCount = 24;
     const box = document.createElement('div');
     box.className = 'confetti-container';
-    for(let i=0;i<confettiCount;i++){
+    for (let i = 0; i < confettiCount; i++) {
       const s = document.createElement('span');
       s.className = 'confetti';
-      s.style.left = (Math.random()*80 + 10)+'%';
-      s.style.animationDelay = (Math.random()*0.6)+'s';
-      s.textContent = ['✨','💖','🎉','🌸'][Math.floor(Math.random()*4)];
+      s.style.left = (Math.random() * 80 + 10) + '%';
+      s.style.animationDelay = (Math.random() * 0.6) + 's';
+      s.textContent = ['✨', '💖', '🎉', '🌸'][Math.floor(Math.random() * 4)];
       box.appendChild(s);
     }
     document.body.appendChild(box);
-    setTimeout(()=> box.remove(), 2500);
+    setTimeout(() => box.remove(), 2500);
   }
 
   // RSVP Admin UI
@@ -493,68 +494,68 @@ document.addEventListener('DOMContentLoaded', function(){
   const exportBtn = document.getElementById('export-rsvps');
   const clearBtn = document.getElementById('clear-rsvps');
 
-  function getRSVPs(){
-    return JSON.parse(localStorage.getItem('rsvps')||'[]');
+  function getRSVPs() {
+    return JSON.parse(localStorage.getItem('rsvps') || '[]');
   }
 
-  function renderRSVPs(){
-    if(!rsvpTbody) return;
+  function renderRSVPs() {
+    if (!rsvpTbody) return;
     const data = getRSVPs();
-    if(!data.length){
+    if (!data.length) {
       rsvpTbody.innerHTML = '<tr><td colspan="7" style="text-align:center">No RSVPs yet</td></tr>';
       return;
     }
-    rsvpTbody.innerHTML = data.map((d,i)=>{
+    rsvpTbody.innerHTML = data.map((d, i) => {
       return `
         <tr>
-          <td>${i+1}</td>
-          <td>${escapeHtml(d.name||'')}</td>
-          <td>${escapeHtml(d.attend||'')}</td>
-          <td>${escapeHtml(d.count||'1')}</td>
-          <td>${escapeHtml(d.note||'')}</td>
-          <td>${escapeHtml(d.time||'')}</td>
+          <td>${i + 1}</td>
+          <td>${escapeHtml(d.name || '')}</td>
+          <td>${escapeHtml(d.attend || '')}</td>
+          <td>${escapeHtml(d.count || '1')}</td>
+          <td>${escapeHtml(d.note || '')}</td>
+          <td>${escapeHtml(d.time || '')}</td>
           <td><button class="delete-rsvp" data-index="${i}">Delete</button></td>
         </tr>`;
     }).join('');
   }
 
-  function escapeHtml(s){
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  function openAdmin(){ if(!adminModal) return; adminModal.setAttribute('aria-hidden','false'); renderRSVPs(); }
-  function closeAdmin(){ if(!adminModal) return; adminModal.setAttribute('aria-hidden','true'); }
+  function openAdmin() { if (!adminModal) return; adminModal.setAttribute('aria-hidden', 'false'); renderRSVPs(); }
+  function closeAdmin() { if (!adminModal) return; adminModal.setAttribute('aria-hidden', 'true'); }
 
   viewBtn && viewBtn.addEventListener('click', openAdmin);
   adminClose && adminClose.addEventListener('click', closeAdmin);
   adminBackdrop && adminBackdrop.addEventListener('click', closeAdmin);
 
   // Delegate delete
-  rsvpTbody && rsvpTbody.addEventListener('click', function(e){
-    if(e.target && e.target.matches('.delete-rsvp')){
+  rsvpTbody && rsvpTbody.addEventListener('click', function (e) {
+    if (e.target && e.target.matches('.delete-rsvp')) {
       const idx = Number(e.target.getAttribute('data-index'));
       const arr = getRSVPs();
-      if(!Number.isFinite(idx) || idx < 0 || idx >= arr.length) return;
-      arr.splice(idx,1);
+      if (!Number.isFinite(idx) || idx < 0 || idx >= arr.length) return;
+      arr.splice(idx, 1);
       localStorage.setItem('rsvps', JSON.stringify(arr));
       renderRSVPs();
     }
   });
 
   // Export CSV
-  exportBtn && exportBtn.addEventListener('click', function(){
+  exportBtn && exportBtn.addEventListener('click', function () {
     const data = getRSVPs();
-    if(!data.length){ alert('No RSVPs to export'); return; }
-    const rows = ['name,attend,count,note,time', ...data.map(d=>[
-      (d.name||'').replace(/"/g,'""'),
-      (d.attend||''),
-      (d.count||'1'),
-      (d.note||'').replace(/"/g,'""'),
-      (d.time||'')
-    ].map(v=>`"${v}"`).join(','))];
+    if (!data.length) { alert('No RSVPs to export'); return; }
+    const rows = ['name,attend,count,note,time', ...data.map(d => [
+      (d.name || '').replace(/"/g, '""'),
+      (d.attend || ''),
+      (d.count || '1'),
+      (d.note || '').replace(/"/g, '""'),
+      (d.time || '')
+    ].map(v => `"${v}"`).join(','))];
     const csv = rows.join('\n');
     // download
-    const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -566,14 +567,44 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   // Clear all
-  clearBtn && clearBtn.addEventListener('click', function(){
-    if(!confirm('Delete all RSVPs? This cannot be undone.')) return;
+  clearBtn && clearBtn.addEventListener('click', function () {
+    if (!confirm('Delete all RSVPs? This cannot be undone.')) return;
     localStorage.removeItem('rsvps');
     renderRSVPs();
   });
 
   // close admin with Escape
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeAdmin(); closeModal(); } });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeAdmin(); closeModal(); } });
+
+  // ----------------- Map Modal -----------------
+  const mapModal = document.getElementById('map-modal');
+  const mapBtn = document.getElementById('view-map-btn');
+  const closeMapBtn = document.getElementById('close-map');
+  const mapBackdrop = document.getElementById('map-backdrop');
+
+  function openMapModal(e) {
+    if (e) e.preventDefault();
+    if (!mapModal) return;
+    mapModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMapModal() {
+    if (!mapModal) return;
+    mapModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  mapBtn && mapBtn.addEventListener('click', openMapModal);
+  closeMapBtn && closeMapBtn.addEventListener('click', closeMapModal);
+  mapBackdrop && mapBackdrop.addEventListener('click', closeMapModal);
+
+  // Close map on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeMapModal();
+    }
+  });
 
 });
 
