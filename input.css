@@ -1341,3 +1341,31 @@
     right: 5px;
   }
 }
+
+/* Map Modal Responsive Styles */
+.map-panel {
+  margin: 20px;
+}
+
+@media (max-width: 768px) {
+  .map-panel {
+    max-width: 95% !important;
+    width: 95% !important;
+    margin: 10px;
+    max-height: 85vh !important;
+  }
+
+  .map-container {
+    padding-bottom: 75% !important;
+    /* Adjust aspect ratio for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .map-panel {
+    max-width: 98% !important;
+    width: 98% !important;
+    margin: 5px;
+    max-height: 80vh !important;
+  }
+}
